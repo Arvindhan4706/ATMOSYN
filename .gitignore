@@ -1,6 +1,9 @@
-# Build output
+# Next.js build output
+.next/
+out/
 dist/
-.astro/
+*.tsbuildinfo
+next-env.d.ts
 
 # Dependencies
 node_modules/
@@ -10,7 +13,7 @@ node_modules/
 .env.*
 !.env.example
 
-# OS generated files
+# OS and logs
 .DS_Store
 Thumbs.db
 *.log

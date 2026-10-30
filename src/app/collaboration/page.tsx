@@ -1,0 +1,181 @@
+import React from "react";
+import type { Metadata } from "next";
+import { Container } from "@/components/ui/Container";
+import { CollaborationForm } from "@/components/collaboration/CollaborationForm";
+import { TestimonialCarousel } from "@/components/collaboration/TestimonialCarousel";
+import { teamMembers } from "@/data/team";
+
+export const metadata: Metadata = {
+  title: "People & Collaboration — Leadership & Student Mentorship",
+  description:
+    "Discover Atmosyn's core leadership team, student mentorship opportunities, and collaborative research initiatives.",
+};
+
+export default function CollaborationPage() {
+  const leadership = teamMembers.filter((m) => m.category === "Leadership");
+  const techAndResearch = teamMembers.filter((m) => m.category === "Technology & Research");
+  const operations = teamMembers.filter((m) => m.category === "Operations & Strategy");
+
+  return (
+    <div className="pt-36 pb-32 bg-[#fdfbf7]">
+      {/* Header */}
+      <section className="pb-16 border-b border-[#1e2622]/10 mb-16">
+        <Container size="wide">
+          <div className="max-w-4xl space-y-4">
+            <div className="utility-label text-[#86b847]">
+              Pillar 2 · Collaborative Growth
+            </div>
+            <h1 className="text-6xl sm:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
+              PEOPLE.
+            </h1>
+            <p className="text-xl sm:text-2xl text-[#1e2622]/80 max-w-2xl font-normal leading-relaxed pt-2">
+              We cultivate a culture of continuous learning, cross-disciplinary mentorship,
+              and tangible opportunities for students and professionals to build real-world environmental solutions.
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      {/* Student & Learning Section */}
+      <section id="students" className="py-20 border-b border-[#1e2622]/10 bg-[#f4f0e6]">
+        <Container size="wide">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-7 space-y-6">
+              <div className="utility-label text-[#86b847]">
+                Student Learning
+              </div>
+              <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tight text-[#1e2622] leading-tight">
+                Practical Engineering Through Real Challenges
+              </h2>
+              <p className="text-base text-[#1e2622]/80 leading-relaxed font-normal">
+                Rather than working on simulated classroom exercises, students engaging with Atmosyn explore
+                open-source environmental data, calibrate telemetry prototypes, and participate in multidisciplinary
+                design reviews alongside experienced functional leads.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+                <div className="p-6 rounded-[16px] bg-[#fdfbf7] border border-[#1e2622]/10 space-y-2">
+                  <h3 className="text-base font-black uppercase tracking-tight text-[#1e2622]">
+                    Multidisciplinary Sprints
+                  </h3>
+                  <p className="text-xs text-[#1e2622]/80 font-normal">Software, hardware telemetry, data modeling, and environmental policy.</p>
+                </div>
+                <div className="p-6 rounded-[16px] bg-[#fdfbf7] border border-[#1e2622]/10 space-y-2">
+                  <h3 className="text-base font-black uppercase tracking-tight text-[#1e2622]">
+                    Direct Mentorship
+                  </h3>
+                  <p className="text-xs text-[#1e2622]/80 font-normal">Structured pairing with functional and technical leadership.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 p-10 rounded-[20px] bg-[#fdfbf7] border border-[#1e2622]/10 space-y-4 shadow-sm">
+              <span className="utility-label text-[#86b847]">
+                Collaborative Culture
+              </span>
+              <h3 className="text-2xl font-black uppercase tracking-tight text-[#1e2622]">
+                Shared Responsibility & Transparency
+              </h3>
+              <p className="text-sm text-[#1e2622]/80 leading-relaxed font-normal">
+                We believe that environmental solutions require multidisciplinary collaboration. Every team
+                member and student contributor shares responsibility for the scientific integrity and transparency of
+                our work.
+              </p>
+              <p className="text-xs text-[#1e2622]/50 pt-3 border-t border-[#1e2622]/10 font-bold uppercase tracking-wider">
+                &ldquo;Creating opportunities for students to gain practical experience.&rdquo; — Atmosyn Charter
+              </p>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Student Testimonials */}
+      <section id="testimonials" className="py-28 border-b border-[#1e2622]/10">
+        <Container size="wide">
+          <div className="max-w-3xl mb-16">
+            <div className="utility-label text-[#86b847] mb-3">
+              Student Voices
+            </div>
+            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
+              TESTIMONIALS.
+            </h2>
+            <p className="text-base text-[#1e2622]/80 pt-2 font-normal">
+              Direct reflections from students who have collaborated with Atmosyn on research initiatives.
+            </p>
+          </div>
+          <TestimonialCarousel />
+        </Container>
+      </section>
+
+      {/* Leadership Directory */}
+      <section id="team" className="py-28 border-b border-[#1e2622]/10">
+        <Container size="wide">
+          <div className="max-w-3xl mb-16">
+            <div className="utility-label text-[#86b847] mb-3">
+              Organization
+            </div>
+            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
+              LEADERSHIP.
+            </h2>
+            <p className="text-base text-[#1e2622]/80 pt-2 font-normal">
+              The core team documented in Atmosyn&apos;s approved organizational charter.
+            </p>
+          </div>
+
+          <div className="space-y-16">
+            {/* Executive Leadership */}
+            <div className="space-y-6">
+              <div className="utility-label text-[#1e2622]/50 border-b border-[#1e2622]/10 pb-2">
+                Executive Leadership
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {leadership.map((member) => (
+                  <div key={member.id} className="p-8 rounded-[16px] bg-[#f4f0e6] border border-[#1e2622]/10 space-y-2">
+                    <h4 className="text-xl font-black uppercase tracking-tight text-[#1e2622]">{member.name}</h4>
+                    <p className="text-xs text-[#86b847] font-black uppercase tracking-wider leading-relaxed">{member.role}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Technology & Research */}
+            <div className="space-y-6">
+              <div className="utility-label text-[#1e2622]/50 border-b border-[#1e2622]/10 pb-2">
+                Technology, Research & Platforms
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {techAndResearch.map((member) => (
+                  <div key={member.id} className="p-8 rounded-[16px] bg-[#f4f0e6] border border-[#1e2622]/10 space-y-2">
+                    <h4 className="text-xl font-black uppercase tracking-tight text-[#1e2622]">{member.name}</h4>
+                    <p className="text-xs text-[#86b847] font-black uppercase tracking-wider leading-relaxed">{member.role}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Operations & Strategy */}
+            <div className="space-y-6">
+              <div className="utility-label text-[#1e2622]/50 border-b border-[#1e2622]/10 pb-2">
+                Operations, Strategy & Creative
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {operations.map((member) => (
+                  <div key={member.id} className="p-8 rounded-[16px] bg-[#f4f0e6] border border-[#1e2622]/10 space-y-2">
+                    <h4 className="text-xl font-black uppercase tracking-tight text-[#1e2622]">{member.name}</h4>
+                    <p className="text-xs text-[#86b847] font-black uppercase tracking-wider leading-relaxed">{member.role}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Collaboration Form Section */}
+      <section className="py-28 bg-[#f4f0e6]">
+        <Container size="narrow">
+          <CollaborationForm />
+        </Container>
+      </section>
+    </div>
+  );
+}
