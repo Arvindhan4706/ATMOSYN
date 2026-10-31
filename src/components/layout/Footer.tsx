@@ -1,8 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { siteConfig } from "@/data/siteConfig";
 import { Container } from "@/components/ui/Container";
-import { NewsletterCapture } from "@/components/ui/NewsletterCapture";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -26,13 +24,6 @@ export function Footer() {
             </p>
             <div className="utility-label text-[#1e2622]/40 pt-2">
               Status: Early Exploration & Research Planning
-            </div>
-            <div className="pt-4 border-t border-[#1e2622]/10 space-y-2">
-              <span className="utility-label text-[#86b847]">Stay Informed</span>
-              <p className="text-xs text-[#1e2622]/60 max-w-xs">
-                Occasional updates on research milestones, student opportunities, and collaboration openings.
-              </p>
-              <NewsletterCapture variant="footer" />
             </div>
           </div>
 

@@ -33,9 +33,9 @@
   text-transform: uppercase;
 }
 
-/* Weighted Motion Curve */
-.motion-weighted {
-  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+/* Weighted Motion Curve (shared by reveal + editorial image effects) */
+:root {
+  --motion-weighted: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Grayscale to Color hover image effect */
@@ -71,7 +71,14 @@
   animation: bounceSlow 4s ease-in-out infinite;
 }
 
-/* Reveal-up Scroll Animation */
+/* Reveal-up Scroll Animation.
+   The hidden start-state only applies when JS is available (the layout adds
+   `.js` to <html>), so no-JS visitors always see the content. */
+.js .reveal-init {
+  opacity: 0;
+  transform: translateY(2rem);
+}
+
 .reveal-up {
   opacity: 1;
   transform: translateY(0);

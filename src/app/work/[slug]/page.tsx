@@ -104,11 +104,6 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                       className="editorial-img object-cover"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-[#1e2622]/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="text-white font-bold text-[10px] uppercase tracking-[0.2em]">
-                        View Full Size
-                      </span>
-                    </div>
                   </div>
                 ))}
               </div>

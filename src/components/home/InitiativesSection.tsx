@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import Link from "next/link";
@@ -14,7 +16,7 @@ const projectImages = [
 export function InitiativesSection() {
   const { ref, isVisible } = useScrollAnimation();
   return (
-    <section className={`py-32 bg-[#fdfbf7] ${isVisible ? "reveal-up" : "opacity-0 translate-y-8"}`} ref={ref}>
+    <section className={`py-32 bg-[#fdfbf7] ${isVisible ? "reveal-up" : "reveal-init"}`} ref={ref}>
       <Container size="wide">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
           <div>

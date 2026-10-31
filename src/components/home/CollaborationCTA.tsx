@@ -1,13 +1,14 @@
+"use client";
+
 import React from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { NewsletterCapture } from "@/components/ui/NewsletterCapture";
 
 export function CollaborationCTA() {
   const { ref, isVisible } = useScrollAnimation();
   return (
-    <section className={`py-32 bg-[#fdfbf7] ${isVisible ? "reveal-up" : "opacity-0 translate-y-8"}`} ref={ref}>
+    <section className={`py-32 bg-[#fdfbf7] ${isVisible ? "reveal-up" : "reveal-init"}`} ref={ref}>
       <Container size="wide">
         <div className="rounded-[24px] p-12 sm:p-20 bg-[#f4f0e6] border border-[#1e2622]/10 text-center space-y-8 max-w-5xl mx-auto shadow-sm">
           <div className="utility-label text-[#86b847]">
@@ -36,14 +37,6 @@ export function CollaborationCTA() {
             >
               Read Our Mission
             </Link>
-          </div>
-
-          <div className="pt-8 border-t border-[#1e2622]/10 space-y-4 max-w-md mx-auto">
-            <span className="utility-label text-[#86b847]">Stay Updated</span>
-            <p className="text-sm text-[#1e2622]/60">
-              Get occasional updates on research milestones and student opportunities.
-            </p>
-            <NewsletterCapture variant="cta" />
           </div>
         </div>
       </Container>

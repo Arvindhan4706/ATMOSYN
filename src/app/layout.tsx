@@ -17,18 +17,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: siteConfig.name,
   url: siteConfig.url,
-  logo: `${siteConfig.url}/logo.png`,
-  sameAs: [
-    "https://github.com/atmosyn",
-    "https://twitter.com/atmosyn",
-    "https://linkedin.com/company/atmosyn",
-  ],
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: "+1-XXX-XXX-XXXX",
-    contactType: "customer service",
-    availableLanguage: "English",
-  },
+  logo: `${siteConfig.url}/logo.svg`,
   description: siteConfig.description,
 };
 
@@ -81,6 +70,13 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        {/* Marks the document as JS-enabled so scroll-reveal sections can start
+            hidden. Without JS this never runs and all content stays visible. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
         />
       </head>
       <body className={`${leagueSpartan.variable} bg-[#fdfbf7] text-[#1e2622] font-sans antialiased selection:bg-[#86b847] selection:text-[#1e2622]`}>

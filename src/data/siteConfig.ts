@@ -4,6 +4,8 @@ export const siteConfig = {
   description:
     "Atmosyn brings people, research, and emerging technologies together to explore practical solutions for environmental and climate challenges.",
   url: "https://atmosyn.org",
+  /** Bump when site content substantively changes; used for sitemap lastModified. */
+  lastContentUpdate: "2026-10-30",
   maturityStage: "Early exploration and planning",
   statusNotice:
     "Atmosyn is currently in active planning and exploratory research phases. We value scientific honesty over unsupported claims.",

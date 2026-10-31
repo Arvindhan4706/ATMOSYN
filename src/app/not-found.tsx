@@ -51,7 +51,6 @@ export default function NotFound() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-12 pr-4 py-3 text-sm font-medium uppercase tracking-wider bg-[#f4f0e6] border border-[#1e2622]/10 rounded-full text-[#1e2622] placeholder-[#1e2622]/40 focus:outline-none focus:border-[#86b847]"
-              autoFocus
             />
           </form>
 

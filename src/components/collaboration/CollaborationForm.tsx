@@ -8,6 +8,7 @@ interface FormState {
   affiliation: string;
   pillarInterest: string;
   message: string;
+  website: string;
 }
 
 export function CollaborationForm() {
@@ -17,6 +18,7 @@ export function CollaborationForm() {
     affiliation: "",
     pillarInterest: "people-growth",
     message: "",
+    website: "",
   });
 
   const [loading, setLoading] = useState(false);
@@ -67,9 +69,10 @@ export function CollaborationForm() {
           affiliation: "",
           pillarInterest: "people-growth",
           message: "",
+          website: "",
         });
       }
-    } catch (err) {
+    } catch {
       setErrorMessage(
         "Network connection error. Please ensure your connection is active and try again."
       );
@@ -112,7 +115,7 @@ export function CollaborationForm() {
             </button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+          <form onSubmit={handleSubmit} className="space-y-6 relative" noValidate>
             {errorMessage && (
               <div
                 className="p-4 rounded-lg bg-red-50 border border-red-200 text-red-700 text-xs font-bold uppercase tracking-wide"
@@ -249,6 +252,21 @@ export function CollaborationForm() {
                   {fieldErrors.message[0]}
                 </p>
               )}
+            </div>
+
+            {/* Honeypot field — visually hidden, only bots fill it. If a value
+                arrives the server silently discards the submission. */}
+            <div className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+              <label htmlFor="website">Website</label>
+              <input
+                type="text"
+                id="website"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                value={formData.website}
+                onChange={handleChange}
+              />
             </div>
 
             <button

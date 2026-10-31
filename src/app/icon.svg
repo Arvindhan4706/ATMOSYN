@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Atmosyn">
+  <rect width="512" height="512" rx="96" fill="#1e2622"/>
+  <path d="M128 392 L256 120 L384 392" fill="none" stroke="#86b847" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M188 300 H324" fill="none" stroke="#fdfbf7" stroke-width="40" stroke-linecap="round"/>
+</svg>

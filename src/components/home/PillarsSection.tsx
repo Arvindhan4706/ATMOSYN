@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import Link from "next/link";
@@ -21,7 +23,7 @@ export function PillarsSection() {
   };
 
   return (
-    <section id="pillars" ref={ref} className={`py-28 bg-[#f4f0e6] ${isVisible ? "reveal-up" : "opacity-0 translate-y-8"}`}>
+    <section id="pillars" ref={ref} className={`py-28 bg-[#f4f0e6] ${isVisible ? "reveal-up" : "reveal-init"}`}>
       <Container size="wide">
         {/* Utility Label */}
         <div className="utility-label text-[#1e2622]/60 mb-4">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { WorkFilterList } from "@/components/work/WorkFilterList";
@@ -31,7 +31,10 @@ export default function WorkPage() {
 
       <section>
         <Container size="wide">
-          <WorkFilterList />
+          {/* Suspense is required because WorkFilterList reads ?search= via useSearchParams */}
+          <Suspense fallback={null}>
+            <WorkFilterList />
+          </Suspense>
         </Container>
       </section>
     </div>

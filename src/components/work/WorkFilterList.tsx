@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 import { Search } from "lucide-react";
 import { projects } from "@/data/projects";
 
@@ -13,8 +14,13 @@ const projectImages = [
 ];
 
 export function WorkFilterList() {
+  // Supports deep-linked searches such as /work?search=telemetry (used by the
+  // 404 page's search box). Only the initial value is read from the URL.
+  const searchParams = useSearchParams();
   const [selectedPillar, setSelectedPillar] = useState<string>("all");
-  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [searchQuery, setSearchQuery] = useState<string>(
+    searchParams.get("search") ?? ""
+  );
 
   const filteredProjects = projects.filter((project) => {
     const matchesPillar =
@@ -41,7 +47,7 @@ export function WorkFilterList() {
           />
         </div>
 
-        <div className="flex flex-wrap items-center gap-2" role="tablist">
+        <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Filter initiatives by pillar">
           {[
             { id: "all", label: "All Work" },
             { id: "climate-action", label: "Climate Action" },
@@ -50,8 +56,10 @@ export function WorkFilterList() {
           ].map((tab) => (
             <button
               key={tab.id}
+              type="button"
               onClick={() => setSelectedPillar(tab.id)}
-              className={`px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${
+              aria-pressed={selectedPillar === tab.id}
+              className={`px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] ${
                 selectedPillar === tab.id
                   ? "bg-[#86b847] text-[#1e2622]"
                   : "bg-transparent text-[#1e2622]/60 hover:text-[#1e2622] border border-[#1e2622]/10"

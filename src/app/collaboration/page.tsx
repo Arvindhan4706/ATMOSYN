@@ -2,7 +2,6 @@ import React from "react";
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { CollaborationForm } from "@/components/collaboration/CollaborationForm";
-import { TestimonialCarousel } from "@/components/collaboration/TestimonialCarousel";
 import { teamMembers } from "@/data/team";
 
 export const metadata: Metadata = {
@@ -85,24 +84,6 @@ export default function CollaborationPage() {
               </p>
             </div>
           </div>
-        </Container>
-      </section>
-
-      {/* Student Testimonials */}
-      <section id="testimonials" className="py-28 border-b border-[#1e2622]/10">
-        <Container size="wide">
-          <div className="max-w-3xl mb-16">
-            <div className="utility-label text-[#86b847] mb-3">
-              Student Voices
-            </div>
-            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
-              TESTIMONIALS.
-            </h2>
-            <p className="text-base text-[#1e2622]/80 pt-2 font-normal">
-              Direct reflections from students who have collaborated with Atmosyn on research initiatives.
-            </p>
-          </div>
-          <TestimonialCarousel />
         </Container>
       </section>
 

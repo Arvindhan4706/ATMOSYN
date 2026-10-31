@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -10,20 +10,66 @@ import { Container } from "@/components/ui/Container";
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const toggleButtonRef = useRef<HTMLButtonElement>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
 
+  const closeMenu = useCallback(() => setMobileMenuOpen(false), []);
+
+  // Escape closes the drawer.
   useEffect(() => {
+    if (!mobileMenuOpen) return;
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && mobileMenuOpen) {
-        setMobileMenuOpen(false);
-      }
+      if (e.key === "Escape") closeMenu();
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [mobileMenuOpen]);
+  }, [mobileMenuOpen, closeMenu]);
 
+  // Close on navigation.
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [pathname]);
+
+  // Drawer lifecycle: lock background scroll, move focus in on open,
+  // trap Tab inside while open, restore focus to the toggle on close.
+  useEffect(() => {
+    if (!mobileMenuOpen) {
+      document.body.style.overflow = "";
+      return;
+    }
+
+    document.body.style.overflow = "hidden";
+    const toggleButton = toggleButtonRef.current;
+    const drawer = drawerRef.current;
+    const getFocusable = () =>
+      drawer
+        ? Array.from(drawer.querySelectorAll<HTMLElement>("a[href], button:not([disabled])"))
+        : [];
+
+    getFocusable()[0]?.focus();
+
+    const handleTabTrap = (e: KeyboardEvent) => {
+      if (e.key !== "Tab") return;
+      const focusable = getFocusable();
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener("keydown", handleTabTrap);
+    return () => {
+      document.removeEventListener("keydown", handleTabTrap);
+      document.body.style.overflow = "";
+      toggleButton?.focus();
+    };
+  }, [mobileMenuOpen]);
 
   return (
     <>
@@ -32,18 +78,6 @@ export function Navbar() {
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-[#86b847] text-[#1e2622] font-bold text-xs uppercase tracking-widest rounded shadow-md"
       >
         Skip to main content
-      </a>
-      <a
-        href="#main-navigation"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-[#86b847] text-[#1e2622] font-bold text-xs uppercase tracking-widest rounded shadow-md"
-      >
-        Skip to navigation
-      </a>
-      <a
-        href="#site-footer"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-[#86b847] text-[#1e2622] font-bold text-xs uppercase tracking-widest rounded shadow-md"
-      >
-        Skip to footer
       </a>
 
       {/* Fixed top navigation, 80px height, glassmorphism */}
@@ -93,6 +127,7 @@ export function Navbar() {
             {/* Mobile Menu Button */}
             <button
               type="button"
+              ref={toggleButtonRef}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="lg:hidden p-2 text-[#1e2622] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] rounded"
               aria-expanded={mobileMenuOpen}
@@ -108,6 +143,7 @@ export function Navbar() {
         {mobileMenuOpen && (
           <div
             id="mobile-navigation"
+            ref={drawerRef}
             className="lg:hidden absolute top-[80px] inset-x-0 bg-[#fdfbf7] border-b border-[#1e2622]/10 px-6 py-8 space-y-4 shadow-xl"
             role="dialog"
             aria-modal="true"

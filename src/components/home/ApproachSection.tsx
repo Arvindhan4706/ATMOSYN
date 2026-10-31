@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Container } from "@/components/ui/Container";
@@ -32,7 +34,7 @@ export function ApproachSection() {
   ];
 
   return (
-    <section className={`py-28 bg-[#f4f0e6] border-y border-[#1e2622]/10 ${isVisible ? "reveal-up" : "opacity-0 translate-y-8"}`} ref={ref}>
+    <section className={`py-28 bg-[#f4f0e6] border-y border-[#1e2622]/10 ${isVisible ? "reveal-up" : "reveal-init"}`} ref={ref}>
       <Container size="wide">
         <div className="max-w-3xl mb-16">
           <div className="utility-label text-[#86b847] mb-3">

@@ -38,33 +38,6 @@ const externalResources = [
   },
 ];
 
-const upcomingPublications = [
-  {
-    title: "Low-Power Microclimate Telemetry: Architecture & Field Validation",
-    authors: "Atmosyn Research Team",
-    status: "In Review",
-    expectedDate: "Q2 2026",
-    description: "Technical report detailing the hardware topology, power budget analysis, and initial field calibration results for the Microclimate & Canopy Telemetry Framework.",
-    repo: "github.com/atmosyn/microclimate-telemetry",
-  },
-  {
-    title: "Participatory Resource Auditing for Institutional Circularity",
-    authors: "Atmosyn Research Team",
-    status: "Draft Preparation",
-    expectedDate: "Q3 2026",
-    description: "Methodological framework combining physical flow measurements with participatory tracking for resource efficiency benchmarking.",
-    repo: "github.com/atmosyn/resource-audit-framework",
-  },
-  {
-    title: "Multidisciplinary Sprint Curriculum for Climate Engineering Education",
-    authors: "Atmosyn Research Team",
-    status: "Pilot Phase",
-    expectedDate: "Q4 2026",
-    description: "Open-source workshop syllabus, mentorship guidelines, and student project repository from the Collaborative Climate Mentorship Protocol.",
-    repo: "github.com/atmosyn/climate-mentorship-curriculum",
-  },
-];
-
 export default function ResearchPage() {
   const taxonomy = [
     {
@@ -212,56 +185,6 @@ export default function ResearchPage() {
                   >
                     Inquire to contribute &rarr;
                   </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Upcoming Publications */}
-      <section className="py-28 border-b border-[#1e2622]/10">
-        <Container size="wide">
-          <div className="max-w-3xl mb-16">
-            <div className="utility-label text-[#86b847] mb-3">
-              Publication Pipeline
-            </div>
-            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
-              UPCOMING.
-            </h2>
-          </div>
-
-          <div className="space-y-6">
-            {upcomingPublications.map((pub, idx) => (
-              <div
-                key={pub.title}
-                className="p-8 rounded-[16px] bg-[#f4f0e6] border border-[#1e2622]/10 space-y-4"
-              >
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div>
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#86b847] block mb-1">
-                      {pub.status} · {pub.expectedDate}
-                    </span>
-                    <h3 className="text-2xl font-black uppercase tracking-tight text-[#1e2622] leading-tight">
-                      {pub.title}
-                    </h3>
-                  </div>
-                  <a
-                    href={pub.repo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs font-black uppercase tracking-[0.2em] text-[#86b847] hover:text-[#1e2622] border-b border-[#86b847] pb-0.5 transition-colors"
-                    aria-label={`View ${pub.title} repository`}
-                  >
-                    Repository &rarr;
-                  </a>
-                </div>
-                <p className="text-sm text-[#1e2622]/80 leading-relaxed font-normal">
-                  {pub.description}
-                </p>
-                <div className="pt-4 border-t border-[#1e2622]/10 flex items-center justify-between text-xs text-[#1e2622]/50">
-                  <span>Authors: {pub.authors}</span>
-                  <span>Scientific Integrity: Pre-registration planned</span>
                 </div>
               </div>
             ))}
