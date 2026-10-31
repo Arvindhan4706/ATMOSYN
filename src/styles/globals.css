@@ -8,6 +8,7 @@
   --color-ink-primary: #1e2622;
 
   --font-sans: var(--font-league-spartan), -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
 }
 
 @layer base {
@@ -31,6 +32,37 @@
   font-weight: 900;
   letter-spacing: 0.4em;
   text-transform: uppercase;
+}
+
+/* Signature micro-label detail: small green lozenge before every
+   editorial label. Rotated square reads as a refined bullet mark. */
+.utility-label::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #86b847;
+  margin-right: 1em;
+  vertical-align: 1.5px;
+  transform: rotate(45deg);
+}
+
+/* Editorial accent: italic serif inside uppercase sans headlines */
+.font-accent {
+  font-family: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  text-transform: none;
+}
+
+/* Subtle vertical ink gradient for display headlines — adds depth
+   without changing the brand color. */
+.text-ink-gradient {
+  background: linear-gradient(180deg, #1e2622 55%, #3a4a41 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* Weighted Motion Curve (shared by reveal + editorial image effects) */

@@ -31,7 +31,7 @@ export default function NotFound() {
           <div className="utility-label text-[#86b847]">
             404 Error
           </div>
-          <h1 className="text-6xl sm:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
+          <h1 className="text-6xl sm:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
             NOT FOUND.
           </h1>
           <p className="text-xl text-[#1e2622]/80 max-w-md mx-auto leading-relaxed font-normal">

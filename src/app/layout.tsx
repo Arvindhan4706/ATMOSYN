@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { League_Spartan } from "next/font/google";
+import { League_Spartan, Instrument_Serif } from "next/font/google";
 import "@/styles/globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -9,6 +9,17 @@ const leagueSpartan = League_Spartan({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-league-spartan",
+  display: "swap",
+});
+
+// Editorial italic serif used for accent words in headlines — the
+// contrast against League Spartan's geometric sans is the site's
+// signature type detail.
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  weight: "400",
+  variable: "--font-instrument-serif",
   display: "swap",
 });
 
@@ -98,7 +109,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${leagueSpartan.variable} bg-[#fdfbf7] text-[#1e2622] font-sans antialiased selection:bg-[#86b847] selection:text-[#1e2622]`}>
+      <body className={`${leagueSpartan.variable} ${instrumentSerif.variable} bg-[#fdfbf7] text-[#1e2622] font-sans antialiased selection:bg-[#86b847] selection:text-[#1e2622]`}>
         <Navbar />
         <main id="main-content" className="min-h-screen pt-[80px]">
           {children}

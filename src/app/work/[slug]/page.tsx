@@ -71,7 +71,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               {project.pillarName} · {project.stage}
             </div>
 
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-[0.88] text-[#1e2622]">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-[0.88] text-ink-gradient">
               {project.title}
             </h1>
 

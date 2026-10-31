@@ -21,7 +21,7 @@ export default function ContactPage() {
             <div className="utility-label text-[#86b847]">
               Official Inquiries
             </div>
-            <h1 className="text-6xl sm:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
+            <h1 className="text-6xl sm:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
               CONTACT.
             </h1>
             <p className="text-xl sm:text-2xl text-[#1e2622]/80 max-w-2xl font-normal leading-relaxed pt-2">

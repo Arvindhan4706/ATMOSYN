@@ -104,8 +104,8 @@ export function Navbar() {
               </span>
             </Link>
 
-            {/* Center Menu: 12px uppercase tracking-widest (0.2em) */}
-            <nav id="main-navigation" className="hidden lg:flex items-center space-x-8" aria-label="Main Navigation">
+            {/* Center Menu: quiet, wide-tracked labels with a hairline hover underline */}
+            <nav id="main-navigation" className="hidden lg:flex items-center gap-9" aria-label="Main Navigation">
               {siteConfig.navLinks.map((link) => {
                 // Highlight the section for all nested routes too
                 // (e.g. /news/some-post keeps "News" active).
@@ -117,24 +117,30 @@ export function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`text-[12px] uppercase font-bold tracking-[0.2em] transition-colors py-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] rounded ${
+                    className={`relative text-[11px] uppercase font-semibold tracking-[0.18em] py-2 transition-colors duration-300 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] rounded ${
                       isActive
-                        ? "text-[#1e2622] border-b-2 border-[#86b847]"
-                        : "text-[#1e2622]/80 hover:text-[#1e2622]"
+                        ? "text-[#1e2622]"
+                        : "text-[#1e2622]/60 hover:text-[#1e2622]"
                     }`}
                     aria-current={isActive ? "page" : undefined}
                   >
                     {link.name}
+                    <span
+                      aria-hidden="true"
+                      className={`absolute left-0 -bottom-0.5 h-px bg-[#86b847] transition-all duration-300 ${
+                        isActive ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                    />
                   </Link>
                 );
               })}
             </nav>
 
-            {/* Far Right: Pill-shaped CTA button in #86b847 */}
+            {/* Far Right: Pill CTA */}
             <div className="hidden lg:flex items-center">
               <Link
                 href="/collaboration#inquiry"
-                className="px-8 py-3 rounded-full bg-[#86b847] hover:bg-[#75a33b] text-[#1e2622] font-extrabold text-[12px] tracking-[0.2em] uppercase transition-all duration-300 hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7]"
+                className="px-7 py-2.5 rounded-full bg-[#86b847] hover:bg-[#75a33b] text-[#1e2622] font-bold text-[11px] tracking-[0.18em] uppercase transition-all duration-300 hover:shadow-lg hover:shadow-[#86b847]/30 hover:-translate-y-px focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7]"
               >
                 Collaborate
               </Link>
@@ -175,8 +181,8 @@ export function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`text-[13px] uppercase tracking-[0.2em] font-bold py-2 border-b border-[#1e2622]/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] rounded ${
-                      isActive ? "text-[#1e2622] border-b-2 border-[#86b847]" : "text-[#1e2622]/80"
+                    className={`text-[12px] uppercase tracking-[0.18em] font-semibold py-2.5 border-b border-[#1e2622]/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] rounded ${
+                      isActive ? "text-[#1e2622] border-b-2 border-[#86b847]" : "text-[#1e2622]/60"
                     }`}
                     aria-current={isActive ? "page" : undefined}
                   >

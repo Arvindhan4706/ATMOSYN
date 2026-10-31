@@ -73,7 +73,7 @@ export default async function NewsPostPage({ params }: PageProps) {
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[0.9] text-[#1e2622]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[0.9] text-ink-gradient">
             {post.title}
           </h1>
 

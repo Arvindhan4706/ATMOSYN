@@ -53,7 +53,7 @@ export default function AboutPage() {
             <div className="utility-label text-[#86b847]">
               About the Organization
             </div>
-            <h1 className="text-6xl sm:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
+            <h1 className="text-6xl sm:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
               ATMOSYN.
             </h1>
             <p className="text-xl sm:text-2xl text-[#1e2622]/80 max-w-2xl font-normal leading-relaxed pt-2">
@@ -114,7 +114,7 @@ export default function AboutPage() {
             <div className="utility-label text-[#86b847] mb-3">
               Official Pillars
             </div>
-            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
+            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
               THREE PILLARS.
             </h2>
           </div>
@@ -182,7 +182,7 @@ export default function AboutPage() {
             <div className="utility-label text-[#86b847] mb-3">
               Governance & Culture
             </div>
-            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
+            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
               CORE VALUES.
             </h2>
           </div>
@@ -208,7 +208,7 @@ export default function AboutPage() {
             <div className="utility-label text-[#86b847] mb-3">
               Progress Record
             </div>
-            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
+            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
               MILESTONES.
             </h2>
             <p className="text-base text-[#1e2622]/80 pt-4 font-normal">

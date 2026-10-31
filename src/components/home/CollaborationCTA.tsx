@@ -15,8 +15,8 @@ export function CollaborationCTA() {
             Open Collaboration & Mentorship
           </div>
 
-          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622] max-w-3xl mx-auto">
-            BUILD WITH <span className="lowercase italic font-normal text-[#86b847]">atmosyn</span>.
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient max-w-3xl mx-auto">
+            BUILD WITH <span className="font-accent lowercase text-[#86b847] text-[1.02em]">atmosyn</span>.
           </h2>
 
           <p className="text-lg sm:text-xl text-[#1e2622]/80 max-w-2xl mx-auto leading-relaxed font-normal">

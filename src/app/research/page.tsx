@@ -78,7 +78,7 @@ export default function ResearchPage() {
             <div className="utility-label text-[#86b847]">
               Pillar 3 · Research & Innovation
             </div>
-            <h1 className="text-6xl sm:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
+            <h1 className="text-6xl sm:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
               RESEARCH.
             </h1>
             <p className="text-xl sm:text-2xl text-[#1e2622]/80 max-w-2xl font-normal leading-relaxed pt-2">
@@ -96,7 +96,7 @@ export default function ResearchPage() {
             <div className="utility-label text-[#86b847] mb-3">
               Methodological Standards
             </div>
-            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
+            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
               LIFECYCLE.
             </h2>
           </div>
@@ -129,7 +129,7 @@ export default function ResearchPage() {
             <div className="utility-label text-[#86b847] mb-3">
               Active Focus
             </div>
-            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
+            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
               THEMES.
             </h2>
           </div>
@@ -201,7 +201,7 @@ export default function ResearchPage() {
             <div className="utility-label text-[#86b847] mb-3">
               Curated Resources
             </div>
-            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
+            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
               OPEN TOOLS.
             </h2>
           </div>

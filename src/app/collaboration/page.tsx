@@ -42,7 +42,7 @@ export default function CollaborationPage() {
             <div className="utility-label text-[#86b847]">
               Pillar 2 · Collaborative Growth
             </div>
-            <h1 className="text-6xl sm:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
+            <h1 className="text-6xl sm:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
               PEOPLE.
             </h1>
             <p className="text-xl sm:text-2xl text-[#1e2622]/80 max-w-2xl font-normal leading-relaxed pt-2">
@@ -112,7 +112,7 @@ export default function CollaborationPage() {
             <div className="utility-label text-[#86b847] mb-3">
               Organization
             </div>
-            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
+            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
               LEADERSHIP.
             </h2>
             <p className="text-base text-[#1e2622]/80 pt-2 font-normal">
@@ -176,7 +176,7 @@ export default function CollaborationPage() {
             <div className="utility-label text-[#86b847] mb-3">
               Careers &amp; General Applications
             </div>
-            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
+            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
               JOIN US.
             </h2>
             <p className="text-base text-[#1e2622]/80 pt-4 font-normal">
@@ -240,7 +240,7 @@ export default function CollaborationPage() {
             <div className="utility-label text-[#86b847] mb-3">
               Common Questions
             </div>
-            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
+            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
               FAQ.
             </h2>
           </div>

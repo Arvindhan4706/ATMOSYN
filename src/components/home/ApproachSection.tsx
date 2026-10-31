@@ -40,7 +40,7 @@ export function ApproachSection() {
           <div className="utility-label text-[#86b847] mb-3">
             Operating Methodology
           </div>
-          <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
+          <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
             OUR PROCESS.
           </h2>
         </div>

@@ -31,7 +31,7 @@ export default function NewsPage() {
             <div className="utility-label text-[#86b847]">
               Build Log · Updated {formatDate(posts[0].date)}
             </div>
-            <h1 className="text-6xl sm:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
+            <h1 className="text-6xl sm:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
               NEWS.
             </h1>
             <p className="text-xl sm:text-2xl text-[#1e2622]/80 max-w-2xl font-normal leading-relaxed pt-2">

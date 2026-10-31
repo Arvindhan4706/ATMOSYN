@@ -20,7 +20,7 @@ export default function PrivacyPage() {
             <div className="utility-label text-[#86b847]">
               Governance & Compliance
             </div>
-            <h1 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
+            <h1 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
               PRIVACY.
             </h1>
             <p className="text-xl text-[#1e2622]/80 leading-relaxed font-normal pt-2">

@@ -31,7 +31,7 @@ export function PillarsSection() {
         </div>
 
         {/* Headline: 8xl font-size */}
-        <h2 className="text-6xl sm:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622] mb-16">
+        <h2 className="text-6xl sm:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient mb-16">
           THE PILLARS.
         </h2>
 

@@ -10,11 +10,12 @@ export const siteConfig = {
   statusNotice:
     "Atmosyn is currently in active planning and exploratory research phases. We value scientific honesty over unsupported claims.",
   navLinks: [
-    { name: "Home", href: "/" },
+    // Short display labels keep the header calm; full page titles live in
+    // each page's metadata for SEO.
     { name: "About", href: "/about" },
-    { name: "Our Work", href: "/work" },
-    { name: "Research & Innovation", href: "/research" },
-    { name: "People & Collaboration", href: "/collaboration" },
+    { name: "Work", href: "/work" },
+    { name: "Research", href: "/research" },
+    { name: "Team", href: "/collaboration" },
     { name: "News", href: "/news" },
     { name: "Contact", href: "/contact" },
   ],
