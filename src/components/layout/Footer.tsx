@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 
 export function Footer() {
@@ -14,9 +15,18 @@ export function Footer() {
           <div className="lg:col-span-5 space-y-6">
             <Link
               href="/"
-              className="text-3xl font-black uppercase tracking-tight text-[#1e2622] hover:opacity-80 transition-opacity inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded"
+              className="flex items-center gap-4 hover:opacity-80 transition-opacity inline-flex focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded"
             >
-              ATMOSYN
+              <Image
+                src="/logo-mark.png"
+                alt=""
+                width={72}
+                height={72}
+                className="w-16 h-16 rounded-2xl border border-[#1e2622]/10 shadow-sm"
+              />
+              <span className="text-3xl font-black uppercase tracking-tight text-[#1e2622]">
+                ATMOSYN
+              </span>
             </Link>
             <p className="text-base text-[#1e2622]/80 leading-relaxed max-w-md font-medium">
               Atmosyn brings people, research, and emerging technologies together to explore practical

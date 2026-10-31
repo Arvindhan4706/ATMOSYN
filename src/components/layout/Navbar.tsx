@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
@@ -84,13 +85,23 @@ export function Navbar() {
       <header className="fixed top-0 left-0 right-0 z-40 h-[80px] bg-[rgba(253,251,247,0.85)] backdrop-blur-[12px] border-b border-[#1e2622]/5 flex items-center">
         <Container size="wide">
           <div className="flex items-center justify-between">
-            {/* Left: ATMOSYN in bold uppercase */}
+            {/* Left: logo mark + ATMOSYN wordmark */}
             <Link
               href="/"
-              className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#1e2622] hover:opacity-80 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] rounded"
+              className="flex items-center gap-3 group hover:opacity-80 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] rounded"
               aria-label="Atmosyn Homepage"
             >
-              ATMOSYN
+              <Image
+                src="/logo-mark.png"
+                alt=""
+                width={48}
+                height={48}
+                priority
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl border border-[#1e2622]/10 shadow-sm"
+              />
+              <span className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#1e2622]">
+                ATMOSYN
+              </span>
             </Link>
 
             {/* Center Menu: 12px uppercase tracking-widest (0.2em) */}

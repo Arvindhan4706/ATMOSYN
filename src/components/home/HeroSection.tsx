@@ -11,8 +11,18 @@ export function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Side: Massive headline at 14-15vw font-size, line-height 0.8 */}
           <div className="lg:col-span-7 space-y-8">
-            <div className="utility-label text-[#1e2622]/60">
-              Environmental Architecture · 2026
+            <div className="flex items-center gap-4">
+              <Image
+                src="/logo-mark.png"
+                alt=""
+                width={64}
+                height={64}
+                priority
+                className="w-14 h-14 rounded-2xl border border-[#1e2622]/10 shadow-sm"
+              />
+              <span className="utility-label text-[#1e2622]/60">
+                Environmental Architecture · 2026
+              </span>
             </div>
 
             <h1 className="text-[13vw] lg:text-[12vw] font-black tracking-tighter leading-[0.82] uppercase text-[#1e2622]">
