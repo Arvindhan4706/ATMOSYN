@@ -97,7 +97,7 @@ export function Navbar() {
                 width={48}
                 height={48}
                 priority
-                className="w-9 h-9 sm:w-11 sm:h-11 rounded-2xl border border-[#1e2622]/10 shadow-sm group-hover:border-[#86b847]/50 group-hover:shadow-[0_2px_10px_rgba(134,184,71,0.25)] transition-all duration-500"
+                className="w-9 h-9 sm:w-11 sm:h-11 rounded-2xl border border-[#1e2622]/10 shadow-sm group-hover:border-[#e2aa38]/60 group-hover:shadow-[0_2px_14px_rgba(226,170,56,0.3)] transition-all duration-500"
               />
               {/* Cinematic wordmark: "atmo" rises letter-by-letter on load,
                   the serif "syn" half carries a travelling shine + glow
@@ -108,14 +108,14 @@ export function Navbar() {
                   {["a", "t", "m", "o"].map((letter, i) => (
                     <span
                       key={letter}
-                      className="wm-rise inline-block"
+                      className="wm-rise wm-atmo inline-block"
                       style={{ animationDelay: `${i * 55}ms` }}
                     >
                       {letter}
                     </span>
                   ))}
                   <span
-                    className="wm-rise inline-block"
+                    className="wm-rise wm-atmo inline-block"
                     style={{ animationDelay: "235ms" }}
                   >
                     <span className="font-accent text-[1.12em] wm-shine">syn</span>
@@ -123,7 +123,7 @@ export function Navbar() {
                 </span>
                 <span
                   aria-hidden="true"
-                  className="wm-mark ml-[7px] mb-[2px] h-[6px] w-[6px] shrink-0 bg-[#86b847] rotate-45 transition-transform duration-500 group-hover:rotate-[225deg]"
+                  className="wm-mark ml-[7px] mb-[2px] h-[6px] w-[6px] shrink-0 rotate-45 transition-transform duration-500 group-hover:rotate-[225deg] rounded-[1px]"
                   style={{ animationDelay: "520ms" }}
                 />
               </span>

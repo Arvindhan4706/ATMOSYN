@@ -35,7 +35,7 @@ export default function PressPage() {
           <div className="max-w-4xl space-y-4">
             <div className="utility-label text-[#4d7526]">Media & Partners</div>
             <h1 className="text-6xl sm:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
-              PRESS <span className="font-accent lowercase text-[#6f9c39] text-[1.02em]">kit.</span>
+              PRESS <span className="font-accent lowercase text-atmosyn-name text-[1.02em]">kit.</span>
             </h1>
             <p className="text-xl sm:text-2xl text-[#1e2622]/80 max-w-2xl font-normal leading-relaxed pt-2">
               Everything required to reference Atmosyn accurately: official

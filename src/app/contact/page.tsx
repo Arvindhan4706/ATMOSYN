@@ -23,7 +23,7 @@ export default function ContactPage() {
               Official Inquiries
             </div>
             <h1 className="text-6xl sm:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
-              CONTACT <span className="font-accent lowercase text-[#6f9c39] text-[1.02em]">us.</span>
+              CONTACT <span className="font-accent lowercase text-atmosyn-name text-[1.02em]">us.</span>
             </h1>
             <p className="text-xl sm:text-2xl text-[#1e2622]/80 max-w-2xl font-normal leading-relaxed pt-2">
               We welcome academic proposals, student inquiries, and institutional discussions focused

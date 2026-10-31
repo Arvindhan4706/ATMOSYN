@@ -53,7 +53,7 @@ export default function TransparencyPage() {
           <div className="max-w-4xl space-y-4">
             <div className="utility-label text-[#4d7526]">Accountability Record</div>
             <h1 className="text-6xl sm:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
-              PROOF <span className="font-accent lowercase text-[#6f9c39] text-[1.02em]">over claims.</span>
+              PROOF <span className="font-accent lowercase text-atmosyn-name text-[1.02em]">over claims.</span>
             </h1>
             <p className="text-xl sm:text-2xl text-[#1e2622]/80 max-w-2xl font-normal leading-relaxed pt-2">
               Scientific honesty is the brand. This page documents exactly how

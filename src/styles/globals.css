@@ -88,19 +88,20 @@
 
 .wm-shine {
   background-image: linear-gradient(
-    100deg,
-    #5d8a30 0%,
-    #6f9c39 34%,
-    #b9e07c 50%,
-    #6f9c39 66%,
-    #5d8a30 100%
+    105deg,
+    #1b4d2e 0%,
+    #2f6f28 20%,
+    #c49733 42%,
+    #f8d968 50%,
+    #6ca832 68%,
+    #1b4d2e 100%
   );
   background-size: 300% 100%;
   background-position: 0% 0;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 0 10px rgba(134, 184, 71, 0.3));
+  filter: drop-shadow(0 0 10px rgba(226, 170, 56, 0.35));
   animation: wm-glint 1.5s ease-out 0.7s 1 both;
   transition: filter 0.5s ease;
 }
@@ -120,7 +121,7 @@
    browser restart it cleanly instead of keeping the completed state. */
 .group:hover .wm-shine {
   animation: wm-glint-hot 1s ease-in-out 0s 1 both;
-  filter: drop-shadow(0 0 16px rgba(134, 184, 71, 0.55));
+  filter: drop-shadow(0 0 18px rgba(226, 170, 56, 0.65));
 }
 
 @keyframes wm-glint-hot {
@@ -133,7 +134,39 @@
 }
 
 .wm-mark {
+  background: linear-gradient(135deg, #24572b 0%, #e2aa38 100%);
+  box-shadow: 0 0 8px rgba(226, 170, 56, 0.45);
   animation: wm-pop 0.55s var(--motion-weighted) both;
+}
+
+.group:hover .wm-mark {
+  box-shadow: 0 0 14px rgba(226, 170, 56, 0.85), 0 0 4px #75a33b;
+}
+
+.wm-atmo {
+  color: #14241d;
+  transition: color 0.4s ease;
+}
+
+.group:hover .wm-atmo {
+  color: #0b1a13;
+}
+
+/* Static signature styling for display headline references to 'atmosyn' and matching accent text */
+.text-atmosyn-name,
+.text-brand-accent {
+  background: linear-gradient(
+    110deg,
+    #1a4a2b 0%,
+    #3f7c2b 30%,
+    #d9a438 55%,
+    #5f9a2e 85%,
+    #1a4a2b 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 12px rgba(217, 164, 56, 0.3));
 }
 
 @keyframes wm-pop {

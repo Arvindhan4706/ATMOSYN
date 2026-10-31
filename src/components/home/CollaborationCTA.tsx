@@ -16,7 +16,7 @@ export function CollaborationCTA() {
           </div>
 
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient max-w-3xl mx-auto">
-            BUILD WITH <span className="font-accent lowercase text-[#6f9c39] text-[1.02em]">atmosyn</span>.
+            BUILD WITH <span className="font-accent lowercase text-atmosyn-name text-[1.02em]">atmosyn</span>.
           </h2>
 
           <p className="text-lg sm:text-xl text-[#1e2622]/80 max-w-2xl mx-auto leading-relaxed font-normal">
