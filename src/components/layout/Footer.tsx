@@ -24,8 +24,13 @@ export function Footer() {
                 height={72}
                 className="w-16 h-16 rounded-2xl border border-[#1e2622]/10 shadow-sm"
               />
-              <span className="text-3xl font-black uppercase tracking-tight text-[#1e2622]">
-                ATMOSYN
+              {/* Matching wordmark: lowercase semibold + signature green lozenge */}
+              <span className="flex items-baseline text-[30px] font-semibold lowercase tracking-[-0.015em] text-[#1e2622] leading-none">
+                atmosyn
+                <span
+                  aria-hidden="true"
+                  className="inline-block w-[7px] h-[7px] ml-[7px] mb-[2px] shrink-0 bg-[#86b847] rotate-45"
+                />
               </span>
             </Link>
             <p className="text-base text-[#1e2622]/80 leading-relaxed max-w-md font-medium">

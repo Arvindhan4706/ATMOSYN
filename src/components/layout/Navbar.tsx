@@ -97,10 +97,16 @@ export function Navbar() {
                 width={48}
                 height={48}
                 priority
-                className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl border border-[#1e2622]/10 shadow-sm"
+                className="w-9 h-9 sm:w-11 sm:h-11 rounded-2xl border border-[#1e2622]/10 shadow-sm group-hover:border-[#86b847]/50 group-hover:shadow-[0_2px_10px_rgba(134,184,71,0.25)] transition-all duration-500"
               />
-              <span className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#1e2622]">
-                ATMOSYN
+              {/* Wordmark: lowercase semibold with the site's signature green
+                  lozenge as the closing mark (same detail as utility labels). */}
+              <span className="flex items-baseline text-[25px] sm:text-[29px] font-semibold lowercase tracking-[-0.015em] text-[#1e2622] leading-none">
+                atmosyn
+                <span
+                  aria-hidden="true"
+                  className="inline-block w-[6px] h-[6px] ml-[6px] mb-[2px] shrink-0 bg-[#86b847] rotate-45 transition-transform duration-500 group-hover:rotate-[225deg]"
+                />
               </span>
             </Link>
 
