@@ -17,7 +17,15 @@ const organizationSchema = {
   "@type": "Organization",
   name: siteConfig.name,
   url: siteConfig.url,
-  logo: `${siteConfig.url}/logo.svg`,
+  logo: `${siteConfig.url}/logo.png`,
+  description: siteConfig.description,
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteConfig.name,
+  url: siteConfig.url,
   description: siteConfig.description,
 };
 
@@ -51,6 +59,13 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     siteName: siteConfig.name,
   },
+  alternates: {
+    types: {
+      "application/rss+xml": [
+        { url: "/rss.xml", title: `${siteConfig.name} News` },
+      ],
+    },
+  },
 };
 
 export const viewport: Viewport = {
@@ -70,6 +85,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         {/* Marks the document as JS-enabled so scroll-reveal sections can start
             hidden. Without JS this never runs and all content stays visible. */}
