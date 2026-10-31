@@ -32,8 +32,8 @@ jobs:
       - name: Run TypeScript typecheck
         run: npm run typecheck
 
-  build:
-    name: Build
+  build-and-a11y:
+    name: Build & Accessibility Check
     runs-on: ubuntu-latest
     needs: lint-and-typecheck
     steps:
@@ -54,36 +54,17 @@ jobs:
         env:
           NEXT_TELEMETRY_DISABLED: 1
 
-  accessibility:
-    name: Accessibility Check
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: "npm"
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build application
-        run: npm run build
-        env:
-          NEXT_TELEMETRY_DISABLED: 1
-
       - name: Start preview server
         run: |
           npm run start &
           sleep 10
 
+      # Advisory for now: axe results are saved and uploaded as an artifact.
+      # Flip `continue-on-error` to false once the baseline is clean to make
+      # accessibility a hard CI gate.
       - name: Run accessibility audit (axe-core)
-        run: |
-          npx @axe-core/cli http://localhost:3000 --exit --save --dir ./a11y-results || true
+        run: npx @axe-core/cli http://localhost:3000 --exit --save --dir ./a11y-results
+        continue-on-error: true
 
       - name: Upload accessibility results
         uses: actions/upload-artifact@v4
@@ -96,8 +77,9 @@ jobs:
   preview-deploy:
     name: Deploy Preview
     runs-on: ubuntu-latest
-    needs: [build, accessibility]
-    if: github.event_name == 'pull_request'
+    needs: [build-and-a11y]
+    # Same-repo pull requests only: forked PRs do not receive repository secrets.
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -109,5 +91,3 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           vercel-args: "--prod=false"
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
