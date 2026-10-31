@@ -8,9 +8,9 @@ import { Search } from "lucide-react";
 import { projects } from "@/data/projects";
 
 const projectImages = [
-  "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=900&q=80",
+  "/images/photo-1470071459604-3b5ec3a7fe05.jpg",
+  "/images/photo-1448375240586-882707db888b.jpg",
+  "/images/photo-1497435334941-8c899ee9e8e9.jpg",
 ];
 
 export function WorkFilterList() {
@@ -37,13 +37,13 @@ export function WorkFilterList() {
       {/* Search and Category Filter Bar */}
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-6 pb-8 border-b border-[#1e2622]/10">
         <div className="relative flex-1 max-w-md">
-          <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-[#1e2622]/40" />
+          <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-[#1e2622]/70" />
           <input
             type="text"
             placeholder="Search explorations & research designs..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-11 pr-4 py-3 text-xs uppercase tracking-wider font-bold bg-[#f4f0e6] border border-[#1e2622]/10 rounded-full text-[#1e2622] placeholder-[#1e2622]/40 focus:outline-none focus:border-[#86b847]"
+            className="w-full pl-11 pr-4 py-3 text-xs uppercase tracking-wider font-bold bg-[#f4f0e6] border border-[#1e2622]/10 rounded-full text-[#1e2622] placeholder-[#1e2622]/70 focus:outline-none focus:border-[#86b847]"
           />
         </div>
 
@@ -59,10 +59,10 @@ export function WorkFilterList() {
               type="button"
               onClick={() => setSelectedPillar(tab.id)}
               aria-pressed={selectedPillar === tab.id}
-              className={`px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] ${
+              className={`px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] ${
                 selectedPillar === tab.id
                   ? "bg-[#86b847] text-[#1e2622]"
-                  : "bg-transparent text-[#1e2622]/60 hover:text-[#1e2622] border border-[#1e2622]/10"
+                  : "bg-transparent text-[#1e2622]/70 hover:text-[#1e2622] border border-[#1e2622]/10"
               }`}
             >
               {tab.label}
@@ -82,7 +82,7 @@ export function WorkFilterList() {
               setSelectedPillar("all");
               setSearchQuery("");
             }}
-            className="text-xs font-black uppercase tracking-widest text-[#86b847] hover:underline"
+            className="text-xs font-black uppercase tracking-widest text-[#4d7526] hover:underline"
           >
             Reset Filters &rarr;
           </button>
@@ -115,7 +115,7 @@ export function WorkFilterList() {
 
                   {/* Below image details */}
                   <div className="space-y-2 pt-2">
-                    <div className="text-[10px] text-[#86b847] font-black uppercase tracking-[0.25em]">
+                    <div className="text-[10px] text-[#4d7526] font-black uppercase tracking-[0.25em]">
                       {item.pillarName}
                     </div>
 
@@ -127,7 +127,7 @@ export function WorkFilterList() {
                       {item.summary}
                     </p>
 
-                    <div className="text-xs text-[#1e2622]/50 font-medium tracking-wide flex items-center gap-2 pt-1">
+                    <div className="text-xs text-[#1e2622]/70 font-medium tracking-wide flex items-center gap-2 pt-1">
                       <span>{item.stage}</span>
                       <span>·</span>
                       <span>Exploratory</span>

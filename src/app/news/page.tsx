@@ -6,6 +6,7 @@ import { newsPosts } from "@/data/news";
 import { JsonLd, breadcrumbSchema } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/news" },
   title: "News — Build Log & Announcements",
   description:
     "Dated, factual updates from Atmosyn: launches, research milestones, and how our exploratory work progresses.",
@@ -29,7 +30,7 @@ export default function NewsPage() {
       <section className="pb-16 border-b border-[#1e2622]/10 mb-16">
         <Container size="wide">
           <div className="max-w-4xl space-y-4">
-            <div className="utility-label text-[#86b847]">
+            <div className="utility-label text-[#4d7526]">
               {hasPosts
                 ? `Build Log · Updated ${formatDate(posts[0].date)}`
                 : "Build Log · Status: In Progress"}
@@ -44,7 +45,7 @@ export default function NewsPage() {
             {hasPosts && (
               <a
                 href="/rss.xml"
-                className="inline-block text-[10px] font-black uppercase tracking-[0.2em] text-[#1e2622] border-b border-[#86b847] pb-1 hover:text-[#86b847] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] rounded"
+                className="inline-block text-[10px] font-black uppercase tracking-[0.2em] text-[#1e2622] border-b border-[#86b847] pb-1 hover:text-[#4d7526] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] rounded"
               >
                 Subscribe via RSS &rarr;
               </a>
@@ -61,13 +62,13 @@ export default function NewsPage() {
                 <article key={post.slug}>
                   <Link
                     href={`/news/${post.slug}`}
-                    className="group block p-8 sm:p-10 rounded-[20px] bg-[#f4f0e6] border border-[#1e2622]/10 hover:border-[#86b847] transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7]"
+                    className="group block p-8 sm:p-10 rounded-[20px] bg-[#f4f0e6] border border-[#1e2622]/10 hover:border-[#86b847] transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7]"
                   >
                     <div className="flex flex-wrap items-center gap-4 pb-4 mb-4 border-b border-[#1e2622]/10">
-                      <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#86b847]">
+                      <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#4d7526]">
                         {post.category}
                       </span>
-                      <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#1e2622]/40">
+                      <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#1e2622]/70">
                         {formatDate(post.date)}
                       </span>
                     </div>
@@ -86,21 +87,44 @@ export default function NewsPage() {
             </div>
           ) : (
             /* Honest empty state: no announcements exist yet, so none are shown. */
-            <div className="max-w-4xl p-10 sm:p-14 rounded-[20px] bg-[#f4f0e6] border border-[#1e2622]/10 space-y-5 text-center">
-              <div className="utility-label text-[#86b847]">Under Processing</div>
-              <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-ink-gradient">
-                No updates published yet.
-              </h2>
-              <p className="text-base text-[#1e2622]/80 leading-relaxed font-normal max-w-xl mx-auto">
-                This feed is active but empty. We publish here only when something
-                real has happened — a milestone reached, a charter revision, a
-                research result — never to fill space. Follow the progress record
-                on our About page in the meantime.
-              </p>
+            <div className="max-w-4xl p-10 sm:p-14 rounded-[20px] bg-[#f4f0e6] border border-[#1e2622]/10 space-y-6 text-center">
+              {/* Telemetry Radar / Calibration Node Empty State Graphic */}
+              <div className="mx-auto w-24 h-24 rounded-full bg-[#fdfbf7] border border-[#1e2622]/10 flex items-center justify-center relative shadow-sm">
+                <svg
+                  className="w-12 h-12 text-[#4d7526]"
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  aria-hidden="true"
+                >
+                  <circle cx="24" cy="24" r="20" strokeDasharray="3 3" opacity="0.4" />
+                  <circle cx="24" cy="24" r="14" stroke="#86b847" opacity="0.6" />
+                  <circle cx="24" cy="24" r="8" />
+                  <path d="M24 12v6M24 30v6M12 24h6M30 24h6" strokeLinecap="round" />
+                  <circle cx="24" cy="24" r="3" fill="#86b847" />
+                </svg>
+                <span className="absolute top-2 right-2 flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#86b847] opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#4d7526]" />
+                </span>
+              </div>
+              <div className="space-y-3">
+                <div className="utility-label text-[#4d7526]">Telemetry &amp; Build Stream</div>
+                <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-ink-gradient">
+                  No updates published yet.
+                </h2>
+                <p className="text-base text-[#1e2622]/80 leading-relaxed font-normal max-w-xl mx-auto">
+                  This feed is active but empty. We publish here only when something
+                  real has happened — a milestone reached, a charter revision, a
+                  research result — never to fill space. Follow the progress record
+                  on our About page in the meantime.
+                </p>
+              </div>
               <div className="pt-2">
                 <Link
                   href="/about#milestones"
-                  className="inline-block px-8 py-3.5 rounded-full bg-[#86b847] hover:bg-[#75a33b] text-[#1e2622] font-extrabold text-[10px] tracking-[0.2em] uppercase transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6]"
+                  className="inline-block px-8 py-3.5 rounded-full bg-[#86b847] hover:bg-[#75a33b] text-[#1e2622] font-extrabold text-[10px] tracking-[0.2em] uppercase transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6]"
                 >
                   View Progress Record
                 </Link>

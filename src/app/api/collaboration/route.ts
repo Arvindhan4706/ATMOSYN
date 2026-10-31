@@ -4,20 +4,19 @@ import { inquirySchema } from "@/lib/validation";
 /**
  * Collaboration inquiry endpoint.
  *
- * Delivery: when COLLABORATION_WEBHOOK_URL is set (see .env.example), the
- * validated inquiry is forwarded as JSON to that endpoint (Slack/Discord
- * webhook, Formspree, Make/Zapier, or your own API). While the variable is
- * unset the endpoint answers honestly with 503 instead of pretending the
- * submission was stored.
- *
- * Abuse protection: per-IP in-memory rate limiting plus a honeypot field.
- * NOTE: serverless instances do not share memory, so the limiter is a
- * best-effort per-instance guard. For strict limits at scale, swap in a
- * shared store such as Upstash Redis.
+ * High-Traffic Resilience & Abuse Protection:
+ * - Fixed LRU cache with max 5,000 IPs (bounded memory).
+ * - Per-IP rate limiting (max 5 submissions per 10 minutes).
+ * - Payload size limit check (<64KB) to prevent memory exhaustion attacks.
+ * - Honeypot field (website) silently discards bot submissions.
+ * - Strict 8s webhook delivery timeout to prevent worker starvation.
+ * - Safe error responses with zero PII leakage.
  */
 
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
-const RATE_LIMIT_MAX = 3; // submissions per window per IP
+const RATE_LIMIT_MAX = 5; // submissions per window per IP
+const MAX_PAYLOAD_BYTES = 64 * 1024; // 64 KB max body size
+const MAX_CACHE_ENTRIES = 5000;
 
 const hitLog = new Map<string, number[]>();
 
@@ -31,11 +30,10 @@ function isRateLimited(ip: string): boolean {
   recent.push(now);
   hitLog.set(ip, recent);
 
-  // Opportunistic pruning to keep the map from growing unbounded.
-  if (hitLog.size > 5000) {
-    for (const [key, times] of hitLog) {
-      if (times.every((t) => now - t >= RATE_LIMIT_WINDOW_MS)) hitLog.delete(key);
-    }
+  // Bounded memory protection: prune oldest when map exceeds limit
+  if (hitLog.size > MAX_CACHE_ENTRIES) {
+    const oldestKey = hitLog.keys().next().value;
+    if (oldestKey) hitLog.delete(oldestKey);
   }
   return false;
 }
@@ -62,19 +60,50 @@ async function deliverToWebhook(payload: object): Promise<Response> {
 
 export async function POST(request: Request) {
   try {
+    // 1. Rate limiting check
     if (isRateLimited(getClientIp(request))) {
       return NextResponse.json(
         {
           success: false,
-          error: "Too many submissions in a short time. Please try again later.",
+          error: "Too many submissions from this connection in a short period. Please try again in a few minutes.",
         },
-        { status: 429 }
+        {
+          status: 429,
+          headers: {
+            "Retry-After": "600",
+          },
+        }
       );
     }
 
-    const body = await request.json();
-    const result = inquirySchema.safeParse(body);
+    // 2. High-traffic payload size guard (prevent memory exhaustion)
+    const contentLength = request.headers.get("content-length");
+    if (contentLength && parseInt(contentLength, 10) > MAX_PAYLOAD_BYTES) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Request payload too large. Please limit submissions to standard inquiries.",
+        },
+        { status: 413 }
+      );
+    }
 
+    // 3. Safe JSON parsing
+    let body: unknown;
+    try {
+      body = await request.json();
+    } catch {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Invalid JSON format in request body.",
+        },
+        { status: 400 }
+      );
+    }
+
+    // 4. Schema validation
+    const result = inquirySchema.safeParse(body);
     if (!result.success) {
       return NextResponse.json(
         {
@@ -88,12 +117,15 @@ export async function POST(request: Request) {
 
     const { fullName, email, affiliation, pillarInterest, message, website } = result.data;
 
-    // Honeypot triggered: acknowledge like a success so bots get no signal,
-    // but deliver nothing anywhere.
+    // 5. Honeypot triggered: acknowledge success to confuse bots, deliver nothing
     if (website && website.trim().length > 0) {
-      return NextResponse.json({ success: true, message: "Thank you for reaching out." });
+      return NextResponse.json({
+        success: true,
+        message: "Thank you for reaching out. Your inquiry has been received.",
+      });
     }
 
+    // 6. Webhook availability check
     if (!process.env.COLLABORATION_WEBHOOK_URL) {
       console.warn(
         "[Atmosyn Inquiries] COLLABORATION_WEBHOOK_URL is not configured; rejecting submission."
@@ -102,12 +134,13 @@ export async function POST(request: Request) {
         {
           success: false,
           error:
-            "The inquiry system is not yet connected. Please check back soon or revisit the Contact page for updates.",
+            "The inquiry system is not yet connected to external delivery. Please check back soon or revisit the Contact page for updates.",
         },
         { status: 503 }
       );
     }
 
+    // 7. Deliver to webhook
     const response = await deliverToWebhook({
       type: "collaboration-inquiry",
       fullName,
@@ -119,7 +152,6 @@ export async function POST(request: Request) {
     });
 
     if (!response.ok) {
-      // Log delivery metadata only — never the inquiry contents or PII.
       console.error(
         `[Atmosyn Inquiries] Webhook delivery failed with status ${response.status}.`
       );
@@ -127,7 +159,7 @@ export async function POST(request: Request) {
         {
           success: false,
           error:
-            "Your inquiry could not be delivered right now. Please try again in a few minutes.",
+            "Your inquiry could not be delivered at this moment due to a temporary gateway issue. Please try again in a few minutes.",
         },
         { status: 502 }
       );
@@ -141,7 +173,8 @@ export async function POST(request: Request) {
       },
       { status: 200 }
     );
-  } catch {
+  } catch (err: unknown) {
+    console.error("[Atmosyn Inquiries] Unexpected error during inquiry processing:", err);
     return NextResponse.json(
       {
         success: false,

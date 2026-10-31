@@ -88,7 +88,7 @@ export function Navbar() {
             {/* Left: logo mark + ATMOSYN wordmark */}
             <Link
               href="/"
-              className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] rounded"
+              className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] rounded"
               aria-label="Atmosyn Homepage"
             >
               <Image
@@ -142,10 +142,10 @@ export function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`relative text-[11px] uppercase font-semibold tracking-[0.18em] py-2 transition-colors duration-300 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] rounded ${
+                    className={`relative text-[11px] uppercase font-semibold tracking-[0.18em] py-2 transition-colors duration-300 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] rounded ${
                       isActive
                         ? "text-[#1e2622]"
-                        : "text-[#1e2622]/60 hover:text-[#1e2622]"
+                        : "text-[#1e2622]/70 hover:text-[#1e2622]"
                     }`}
                     aria-current={isActive ? "page" : undefined}
                   >
@@ -165,7 +165,7 @@ export function Navbar() {
             <div className="hidden lg:flex items-center">
               <Link
                 href="/collaboration#inquiry"
-                className="px-7 py-2.5 rounded-full bg-[#86b847] hover:bg-[#75a33b] text-[#1e2622] font-bold text-[11px] tracking-[0.18em] uppercase transition-all duration-300 hover:shadow-lg hover:shadow-[#86b847]/30 hover:-translate-y-px focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7]"
+                className="px-7 py-2.5 rounded-full bg-[#86b847] hover:bg-[#75a33b] text-[#1e2622] font-bold text-[11px] tracking-[0.18em] uppercase transition-all duration-300 hover:shadow-lg hover:shadow-[#86b847]/30 hover:-translate-y-px focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7]"
               >
                 Collaborate
               </Link>
@@ -176,7 +176,7 @@ export function Navbar() {
               type="button"
               ref={toggleButtonRef}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-[#1e2622] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] rounded"
+              className="lg:hidden p-2 text-[#1e2622] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] rounded"
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-navigation"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
@@ -206,8 +206,8 @@ export function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`text-[12px] uppercase tracking-[0.18em] font-semibold py-2.5 border-b border-[#1e2622]/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] rounded ${
-                      isActive ? "text-[#1e2622] border-b-2 border-[#86b847]" : "text-[#1e2622]/60"
+                    className={`text-[12px] uppercase tracking-[0.18em] font-semibold py-2.5 border-b border-[#1e2622]/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] rounded ${
+                      isActive ? "text-[#1e2622] border-b-2 border-[#86b847]" : "text-[#1e2622]/70"
                     }`}
                     aria-current={isActive ? "page" : undefined}
                   >
@@ -218,7 +218,7 @@ export function Navbar() {
               <div className="pt-4">
                 <Link
                   href="/collaboration#inquiry"
-                  className="w-full block text-center px-8 py-3.5 rounded-full bg-[#86b847] text-[#1e2622] font-extrabold text-[13px] tracking-[0.2em] uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7]"
+                  className="w-full block text-center px-8 py-3.5 rounded-full bg-[#86b847] text-[#1e2622] font-extrabold text-[13px] tracking-[0.2em] uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7]"
                 >
                   Collaborate
                 </Link>

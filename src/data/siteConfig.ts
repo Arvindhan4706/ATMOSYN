@@ -38,6 +38,8 @@ export const siteConfig = {
       { name: "Privacy Policy", href: "/privacy" },
       { name: "Terms of Use", href: "/terms" },
       { name: "Scientific Integrity", href: "/about#integrity" },
+      { name: "Transparency Record", href: "/transparency" },
+      { name: "Press & Media", href: "/press" },
     ],
   },
   contactConfig: {
@@ -45,4 +47,16 @@ export const siteConfig = {
     channelNotice:
       "Official public communication channels are currently being configured by the administrative team. For institutional and academic inquiries, please use the collaboration inquiry form.",
   },
+  /**
+   * External profiles. Keep empty until the accounts exist — the footer
+   * hides the whole social column while this array is empty, so no link on
+   * the site can ever point at a placeholder.
+   * Example: { name: "LinkedIn", href: "https://www.linkedin.com/company/atmosyn" }
+   */
+  socialLinks: [] as { name: string; href: string }[],
+  /**
+   * Scheduler URL (e.g. "https://cal.com/atmosyn/intro") for instant call
+   * booking. While null, the contact page shows no scheduling button at all.
+   */
+  bookingUrl: null as string | null,
 };

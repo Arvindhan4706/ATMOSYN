@@ -8,9 +8,9 @@ import { Container } from "@/components/ui/Container";
 import { projects } from "@/data/projects";
 
 const projectImages = [
-  "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=900&q=80",
+  "/images/photo-1470071459604-3b5ec3a7fe05.jpg",
+  "/images/photo-1448375240586-882707db888b.jpg",
+  "/images/photo-1497435334941-8c899ee9e8e9.jpg",
 ];
 
 export function InitiativesSection() {
@@ -20,7 +20,7 @@ export function InitiativesSection() {
       <Container size="wide">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
           <div>
-            <div className="utility-label text-[#86b847] mb-3">
+            <div className="utility-label text-[#4d7526] mb-3">
               Portfolio & Explorations
             </div>
             <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
@@ -29,7 +29,7 @@ export function InitiativesSection() {
           </div>
           <Link
             href="/work"
-            className="text-[10px] font-black uppercase tracking-[0.2em] text-[#1e2622] border-b-2 border-[#86b847] pb-1 hover:text-[#1e2622]/60 transition-colors"
+            className="text-[10px] font-black uppercase tracking-[0.2em] text-[#1e2622] border-b-2 border-[#86b847] pb-1 hover:text-[#1e2622]/70 transition-colors"
           >
             All Explorations &rarr;
           </Link>
@@ -67,7 +67,7 @@ export function InitiativesSection() {
 
                   {/* Below images: category label in 10px #86b847 bold tracking-widest */}
                   <div className="space-y-2 pt-2">
-                    <div className="text-[10px] text-[#86b847] font-black uppercase tracking-[0.25em]">
+                    <div className="text-[10px] text-[#4d7526] font-black uppercase tracking-[0.25em]">
                       {project.pillarName}
                     </div>
 
@@ -77,7 +77,7 @@ export function InitiativesSection() {
                     </h3>
 
                     {/* Tag metadata separated by bullet points */}
-                    <div className="text-xs text-[#1e2622]/60 font-medium tracking-wide flex items-center gap-2 pt-1">
+                    <div className="text-xs text-[#1e2622]/70 font-medium tracking-wide flex items-center gap-2 pt-1">
                       <span>{project.stage}</span>
                       <span>·</span>
                       <span>Exploratory Research</span>

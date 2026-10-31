@@ -7,17 +7,21 @@ import { z } from "zod";
  */
 
 export const inquirySchema = z.object({
-  fullName: z.string().trim().min(2, "Full name must be at least 2 characters."),
-  email: z.string().trim().email("Please provide a valid email address."),
+  fullName: z.string().trim().min(2, "Full name must be at least 2 characters.").max(120, "Full name must be under 120 characters."),
+  email: z.string().trim().email("Please provide a valid email address.").max(180, "Email must be under 180 characters."),
   affiliation: z
     .string()
     .trim()
-    .min(2, "Please share your university, organization, or independent background."),
+    .min(2, "Please share your university, organization, or independent background.")
+    .max(200, "Affiliation must be under 200 characters."),
   pillarInterest: z.enum([
     "climate-action",
     "people-growth",
     "research-innovation",
     "general-inquiry",
+    "careers-application",
+    "corrections",
+    "press-media",
   ]),
   message: z
     .string()

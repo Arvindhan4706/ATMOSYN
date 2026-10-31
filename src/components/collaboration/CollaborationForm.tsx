@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 
 interface FormState {
   fullName: string;
@@ -11,7 +12,10 @@ interface FormState {
   website: string;
 }
 
-export function CollaborationForm() {
+function FormInner() {
+  const searchParams = useSearchParams();
+  const intentParam = searchParams.get("intent");
+
   const [formData, setFormData] = useState<FormState>({
     fullName: "",
     email: "",
@@ -20,6 +24,25 @@ export function CollaborationForm() {
     message: "",
     website: "",
   });
+
+  useEffect(() => {
+    if (!intentParam) return;
+    const map: Record<string, string> = {
+      careers: "careers-application",
+      correction: "corrections",
+      corrections: "corrections",
+      press: "press-media",
+      media: "press-media",
+      mentorship: "people-growth",
+      students: "people-growth",
+      climate: "climate-action",
+      research: "research-innovation",
+    };
+    const target = map[intentParam.toLowerCase()];
+    if (target) {
+      setFormData((prev) => ({ ...prev, pillarInterest: target }));
+    }
+  }, [intentParam]);
 
   const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
@@ -85,7 +108,7 @@ export function CollaborationForm() {
     <div id="inquiry" className="scroll-mt-28">
       <div className="p-10 sm:p-14 rounded-[24px] bg-[#fdfbf7] border border-[#1e2622]/10 space-y-8 shadow-sm">
         <div>
-          <div className="utility-label text-[#86b847]">
+          <div className="utility-label text-[#4d7526]">
             Direct Inquiries
           </div>
           <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#1e2622] mt-2">
@@ -108,8 +131,9 @@ export function CollaborationForm() {
               {successMessage}
             </p>
             <button
+              type="button"
               onClick={() => setSuccessMessage(null)}
-              className="text-xs font-black uppercase tracking-widest text-[#86b847] hover:underline block pt-2"
+              className="text-xs font-black uppercase tracking-widest text-[#4d7526] hover:underline block pt-2 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] rounded"
             >
               Submit another inquiry &rarr;
             </button>
@@ -142,7 +166,7 @@ export function CollaborationForm() {
                   onChange={handleChange}
                   aria-invalid={!!fieldErrors.fullName}
                   aria-describedby={fieldErrors.fullName ? "fullName-error" : undefined}
-                  className="w-full px-4 py-3 bg-[#f4f0e6] border border-[#1e2622]/10 rounded-full text-xs font-bold uppercase tracking-wider text-[#1e2622] placeholder-[#1e2622]/40 focus:outline-none focus:border-[#86b847]"
+                  className="w-full px-4 py-3 bg-[#f4f0e6] border border-[#1e2622]/10 rounded-full text-xs font-bold uppercase tracking-wider text-[#1e2622] placeholder-[#1e2622]/70 focus:outline-none focus:border-[#86b847]"
                   placeholder="e.g. Alex Rivera"
                 />
                 {fieldErrors.fullName && (
@@ -168,7 +192,7 @@ export function CollaborationForm() {
                   onChange={handleChange}
                   aria-invalid={!!fieldErrors.email}
                   aria-describedby={fieldErrors.email ? "email-error" : undefined}
-                  className="w-full px-4 py-3 bg-[#f4f0e6] border border-[#1e2622]/10 rounded-full text-xs font-bold uppercase tracking-wider text-[#1e2622] placeholder-[#1e2622]/40 focus:outline-none focus:border-[#86b847]"
+                  className="w-full px-4 py-3 bg-[#f4f0e6] border border-[#1e2622]/10 rounded-full text-xs font-bold uppercase tracking-wider text-[#1e2622] placeholder-[#1e2622]/70 focus:outline-none focus:border-[#86b847]"
                   placeholder="name@organization.com"
                 />
                 {fieldErrors.email && (
@@ -196,7 +220,7 @@ export function CollaborationForm() {
                   onChange={handleChange}
                   aria-invalid={!!fieldErrors.affiliation}
                   aria-describedby={fieldErrors.affiliation ? "affiliation-error" : undefined}
-                  className="w-full px-4 py-3 bg-[#f4f0e6] border border-[#1e2622]/10 rounded-full text-xs font-bold uppercase tracking-wider text-[#1e2622] placeholder-[#1e2622]/40 focus:outline-none focus:border-[#86b847]"
+                  className="w-full px-4 py-3 bg-[#f4f0e6] border border-[#1e2622]/10 rounded-full text-xs font-bold uppercase tracking-wider text-[#1e2622] placeholder-[#1e2622]/70 focus:outline-none focus:border-[#86b847]"
                   placeholder="e.g. Engineering Student, Tech Institute"
                 />
                 {fieldErrors.affiliation && (
@@ -211,7 +235,7 @@ export function CollaborationForm() {
                   htmlFor="pillarInterest"
                   className="block text-[10px] font-black uppercase tracking-[0.2em] text-[#1e2622]"
                 >
-                  Area of Interest
+                  Area of Interest & Intent
                 </label>
                 <select
                   id="pillarInterest"
@@ -223,6 +247,9 @@ export function CollaborationForm() {
                   <option value="people-growth">Pillar 2: Student Mentorship & Growth</option>
                   <option value="climate-action">Pillar 1: Climate Action & Sustainability</option>
                   <option value="research-innovation">Pillar 3: Research & Emerging Tech</option>
+                  <option value="careers-application">Careers & General Application</option>
+                  <option value="press-media">Press & Media Inquiry</option>
+                  <option value="corrections">Website Correction & Integrity Report</option>
                   <option value="general-inquiry">General Institutional Inquiry</option>
                 </select>
               </div>
@@ -244,7 +271,7 @@ export function CollaborationForm() {
                 onChange={handleChange}
                 aria-invalid={!!fieldErrors.message}
                 aria-describedby={fieldErrors.message ? "message-error" : undefined}
-                className="w-full px-5 py-4 bg-[#f4f0e6] border border-[#1e2622]/10 rounded-[16px] text-sm text-[#1e2622] placeholder-[#1e2622]/40 focus:outline-none focus:border-[#86b847]"
+                className="w-full px-5 py-4 bg-[#f4f0e6] border border-[#1e2622]/10 rounded-[16px] text-sm text-[#1e2622] placeholder-[#1e2622]/70 focus:outline-none focus:border-[#86b847]"
                 placeholder="Share your background and how you would like to collaborate with Atmosyn..."
               />
               {fieldErrors.message && (
@@ -254,8 +281,7 @@ export function CollaborationForm() {
               )}
             </div>
 
-            {/* Honeypot field — visually hidden, only bots fill it. If a value
-                arrives the server silently discards the submission. */}
+            {/* Honeypot field — visually hidden, only bots fill it */}
             <div className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
               <label htmlFor="website">Website</label>
               <input
@@ -272,7 +298,7 @@ export function CollaborationForm() {
             <button
               type="submit"
               disabled={loading}
-              className="px-10 py-4 rounded-full bg-[#86b847] hover:bg-[#75a33b] text-[#1e2622] font-extrabold text-[10px] tracking-[0.2em] uppercase transition-all duration-300 disabled:opacity-50"
+              className="px-10 py-4 rounded-full bg-[#86b847] hover:bg-[#75a33b] text-[#1e2622] font-extrabold text-[10px] tracking-[0.2em] uppercase transition-all duration-300 disabled:opacity-50 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526]"
             >
               {loading ? "Submitting Inquiry..." : "Submit Inquiry"}
             </button>
@@ -280,5 +306,19 @@ export function CollaborationForm() {
         )}
       </div>
     </div>
+  );
+}
+
+export function CollaborationForm() {
+  return (
+    <Suspense
+      fallback={
+        <div className="p-10 sm:p-14 rounded-[24px] bg-[#fdfbf7] border border-[#1e2622]/10 text-center text-xs font-bold uppercase tracking-wider text-[#1e2622]/70">
+          Loading inquiry portal...
+        </div>
+      }
+    >
+      <FormInner />
+    </Suspense>
   );
 }

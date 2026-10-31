@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80" fill="none">
+  <defs>
+    <linearGradient id="fullAtmoGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4d7526"/>
+      <stop offset="60%" stop-color="#86b847"/>
+      <stop offset="100%" stop-color="#a4d455"/>
+    </linearGradient>
+  </defs>
+  <!-- Mark -->
+  <rect x="10" y="10" width="60" height="60" rx="16" fill="#f4f0e6"/>
+  <g transform="translate(40,40)">
+    <path d="M0 -18 C12 -12, 18 -3, 16 9 C14 18, 5 20, 0 20 C-5 20, -14 18, -16 9 C-18 -3, -12 -12, 0 -18 Z" fill="url(#fullAtmoGreen)"/>
+    <rect x="-3" y="-3" width="6" height="6" rx="1" transform="rotate(45)" fill="#1e2622"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="88" y="52" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="34" letter-spacing="-0.02em" fill="#1e2622">
+    atmo<tspan font-family="Georgia, serif" font-style="italic" font-weight="400" fill="#4d7526">syn</tspan>
+  </text>
+  <rect x="254" y="32" width="6" height="6" fill="#86b847" transform="rotate(45 257 35)"/>
+</svg>
+

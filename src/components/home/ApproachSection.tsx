@@ -37,7 +37,7 @@ export function ApproachSection() {
     <section className={`py-28 bg-[#f4f0e6] border-y border-[#1e2622]/10 ${isVisible ? "reveal-up" : "reveal-init"}`} ref={ref}>
       <Container size="wide">
         <div className="max-w-3xl mb-16">
-          <div className="utility-label text-[#86b847] mb-3">
+          <div className="utility-label text-[#4d7526] mb-3">
             Operating Methodology
           </div>
           <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
@@ -52,7 +52,7 @@ export function ApproachSection() {
               className="p-8 rounded-[16px] bg-[#fdfbf7] border border-[#1e2622]/10 hover:border-[#86b847] transition-colors duration-500 space-y-6 flex flex-col justify-between"
             >
               <div className="space-y-4">
-                <span className="text-4xl font-black italic tracking-tighter text-[#86b847] block font-mono">
+                <span className="text-4xl font-black italic tracking-tighter text-[#4d7526] block font-mono">
                   {item.step}
                 </span>
                 <h3 className="text-xl font-black uppercase tracking-tight text-[#1e2622] leading-tight">
@@ -64,7 +64,7 @@ export function ApproachSection() {
               </div>
 
               <div className="pt-4 border-t border-[#1e2622]/5">
-                <span className="utility-label text-[#1e2622]/40">
+                <span className="utility-label text-[#1e2622]/70">
                   Phase {item.step}
                 </span>
               </div>

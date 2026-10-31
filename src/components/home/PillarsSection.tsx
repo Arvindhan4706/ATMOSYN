@@ -12,13 +12,13 @@ export function PillarsSection() {
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case "Leaf":
-        return <Leaf className="w-10 h-10 text-[#86b847] group-hover:text-[#1e2622] transition-colors duration-500" />;
+        return <Leaf className="w-10 h-10 text-[#4d7526] group-hover:text-[#1e2622] transition-colors duration-500" />;
       case "Users":
-        return <Users className="w-10 h-10 text-[#86b847] group-hover:text-[#1e2622] transition-colors duration-500" />;
+        return <Users className="w-10 h-10 text-[#4d7526] group-hover:text-[#1e2622] transition-colors duration-500" />;
       case "Cpu":
-        return <Cpu className="w-10 h-10 text-[#86b847] group-hover:text-[#1e2622] transition-colors duration-500" />;
+        return <Cpu className="w-10 h-10 text-[#4d7526] group-hover:text-[#1e2622] transition-colors duration-500" />;
       default:
-        return <Leaf className="w-10 h-10 text-[#86b847] group-hover:text-[#1e2622] transition-colors duration-500" />;
+        return <Leaf className="w-10 h-10 text-[#4d7526] group-hover:text-[#1e2622] transition-colors duration-500" />;
     }
   };
 
@@ -26,7 +26,7 @@ export function PillarsSection() {
     <section id="pillars" ref={ref} className={`py-28 bg-[#f4f0e6] ${isVisible ? "reveal-up" : "reveal-init"}`}>
       <Container size="wide">
         {/* Utility Label */}
-        <div className="utility-label text-[#1e2622]/60 mb-4">
+        <div className="utility-label text-[#1e2622]/70 mb-4">
           Core Operating Pillars
         </div>
 
@@ -55,7 +55,7 @@ export function PillarsSection() {
 
                 {/* h3 bold uppercase */}
                 <div className="space-y-2">
-                  <span className="utility-label text-[#1e2622]/60 group-hover:text-[#1e2622]/80 transition-colors">
+                  <span className="utility-label text-[#1e2622]/70 group-hover:text-[#1e2622]/80 transition-colors">
                     {pillar.subtitle}
                   </span>
                   <h3 className="text-2xl font-black uppercase tracking-tight text-[#1e2622] leading-tight">
@@ -70,7 +70,7 @@ export function PillarsSection() {
 
                 {/* Objectives */}
                 <div className="pt-4 border-t border-[#1e2622]/10 space-y-2">
-                  <span className="utility-label text-[#1e2622]/60">Documented:</span>
+                  <span className="utility-label text-[#1e2622]/70">Documented:</span>
                   <ul className="space-y-1.5 text-xs text-[#1e2622]/80 group-hover:text-[#1e2622] transition-colors font-medium">
                     {pillar.objectives.map((obj, i) => (
                       <li key={i} className="flex items-start gap-2">

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" fill="none">
+  <!-- Monochrome Dark Mark -->
+  <rect width="100" height="100" rx="22" fill="#1e2622"/>
+  <g transform="translate(50,50)">
+    <path d="M0 -30 C18 -20, 28 -5, 26 15 C24 30, 8 32, 0 32 C-8 32, -24 30, -26 15 C-28 -5, -18 -20, 0 -30 Z" fill="#fdfbf7"/>
+    <path d="M0 -15 C8 -10, 14 0, 12 12 C10 20, 2 22, 0 22 C-2 22, -10 20, -12 12 C-14 0, -8 -10, 0 -15 Z" fill="#1e2622"/>
+    <rect x="-4" y="-4" width="8" height="8" rx="1.5" transform="rotate(45)" fill="#fdfbf7"/>
+  </g>
+</svg>
+

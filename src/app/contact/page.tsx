@@ -6,6 +6,7 @@ import { siteConfig } from "@/data/siteConfig";
 import { JsonLd, breadcrumbSchema } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/contact" },
   title: "Contact — Communications & Inquiries",
   description:
     "Official points of contact for Atmosyn, including the collaboration inquiry portal and channel provisioning status.",
@@ -18,11 +19,11 @@ export default function ContactPage() {
       <section className="pb-16 border-b border-[#1e2622]/10 mb-16">
         <Container size="wide">
           <div className="max-w-4xl space-y-4">
-            <div className="utility-label text-[#86b847]">
+            <div className="utility-label text-[#4d7526]">
               Official Inquiries
             </div>
             <h1 className="text-6xl sm:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
-              CONTACT <span className="font-accent lowercase text-[#86b847] text-[1.02em]">us.</span>
+              CONTACT <span className="font-accent lowercase text-[#6f9c39] text-[1.02em]">us.</span>
             </h1>
             <p className="text-xl sm:text-2xl text-[#1e2622]/80 max-w-2xl font-normal leading-relaxed pt-2">
               We welcome academic proposals, student inquiries, and institutional discussions focused
@@ -37,7 +38,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Primary Route */}
             <div className="p-10 sm:p-14 rounded-[24px] bg-[#f4f0e6] border border-[#1e2622]/10 space-y-6">
-              <span className="utility-label text-[#86b847]">
+              <span className="utility-label text-[#4d7526]">
                 Primary Inquiry Route
               </span>
               <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#1e2622]">
@@ -47,19 +48,33 @@ export default function ContactPage() {
                 For research proposals, mentorship questions, or exploratory technical discussions,
                 please submit your details through our collaboration inquiry portal.
               </p>
-              <div className="pt-4">
+              <div className="pt-4 flex flex-wrap gap-4">
                 <Link
                   href="/collaboration#inquiry"
-                  className="inline-block px-8 py-4 rounded-full bg-[#86b847] hover:bg-[#75a33b] text-[#1e2622] font-extrabold text-[10px] tracking-[0.2em] uppercase transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6]"
+                  className="inline-block px-8 py-4 rounded-full bg-[#86b847] hover:bg-[#75a33b] text-[#1e2622] font-extrabold text-[10px] tracking-[0.2em] uppercase transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6]"
                 >
                   Go to Collaboration Form &rarr;
                 </Link>
+                {siteConfig.bookingUrl ? (
+                  <a
+                    href={siteConfig.bookingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-8 py-4 rounded-full border border-[#1e2622]/20 hover:bg-[#1e2622]/5 text-[#1e2622] font-extrabold text-[10px] tracking-[0.2em] uppercase transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6]"
+                  >
+                    Schedule Intro Call (Cal.com) &rarr;
+                  </a>
+                ) : (
+                  <span className="inline-flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-[#1e2622]/70 py-4">
+                    Calls scheduled upon proposal review
+                  </span>
+                )}
               </div>
             </div>
 
             {/* Administrative Notice */}
             <div className="p-10 sm:p-14 rounded-[24px] bg-[#f4f0e6] border border-[#1e2622]/10 space-y-6">
-              <span className="utility-label text-[#1e2622]/50">
+              <span className="utility-label text-[#1e2622]/70">
                 Administrative Channels
               </span>
               <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#1e2622]">
@@ -69,7 +84,7 @@ export default function ContactPage() {
                 {siteConfig.contactConfig.channelNotice}
               </p>
               <div className="pt-4 border-t border-[#1e2622]/10 space-y-2">
-                <span className="utility-label text-[#1e2622]/50">
+                <span className="utility-label text-[#1e2622]/70">
                   Channel Provisioning Checklist:
                 </span>
                 <ul className="space-y-1.5 text-xs text-[#1e2622]/80 font-bold uppercase tracking-wider">
@@ -87,7 +102,7 @@ export default function ContactPage() {
       <section className="py-28 border-t border-[#1e2622]/10">
         <Container size="narrow">
           <div className="p-8 rounded-[20px] bg-[#f4f0e6] border border-[#1e2622]/10 text-center space-y-6">
-            <div className="utility-label text-[#86b847]">Response Handling</div>
+            <div className="utility-label text-[#4d7526]">Response Handling</div>
             <h3 className="text-2xl font-black uppercase tracking-tight text-ink-gradient">
               How Inquiries Are Handled
             </h3>
@@ -97,7 +112,7 @@ export default function ContactPage() {
               a fixed response SLA — we would rather leave the timeline open than
               promise one we cannot guarantee.
             </p>
-            <p className="text-xs text-[#1e2622]/50">
+            <p className="text-xs text-[#1e2622]/70">
               All inquiries are reviewed by functional leads. Complex proposals may require additional review time.
             </p>
           </div>

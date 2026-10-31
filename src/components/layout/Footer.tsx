@@ -15,7 +15,7 @@ export function Footer() {
           <div className="lg:col-span-5 space-y-6">
             <Link
               href="/"
-              className="flex items-center gap-4 group inline-flex focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded"
+              className="flex items-center gap-4 group inline-flex focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded"
             >
               <Image
                 src="/logo-mark.png"
@@ -55,7 +55,7 @@ export function Footer() {
               experienced leads together on open environmental questions —
               every claim published at its honest stage.
             </p>
-            <div className="utility-label text-[#1e2622]/40 pt-2">
+            <div className="utility-label text-[#1e2622]/70 pt-2">
               Status: Early Exploration & Research Planning
             </div>
           </div>
@@ -64,32 +64,32 @@ export function Footer() {
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-8">
             {/* Sub-col 1: Navigation */}
             <div className="space-y-4">
-              <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-[#86b847] underline underline-offset-8 decoration-2 decoration-[#86b847]">
+              <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-[#4d7526] underline underline-offset-8 decoration-2 decoration-[#86b847]">
                 NAVIGATION
               </h4>
               <ul className="space-y-2.5 text-xs font-bold uppercase tracking-wider text-[#1e2622]/80 pt-2">
                 <li>
-                  <Link href="/about" className="hover:text-[#86b847] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
+                  <Link href="/about" className="hover:text-[#4d7526] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
                     About Atmosyn
                   </Link>
                 </li>
                 <li>
-                  <Link href="/work" className="hover:text-[#86b847] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
+                  <Link href="/work" className="hover:text-[#4d7526] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
                     Our Work
                   </Link>
                 </li>
                 <li>
-                  <Link href="/research" className="hover:text-[#86b847] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
+                  <Link href="/research" className="hover:text-[#4d7526] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
                     Research & Tech
                   </Link>
                 </li>
                 <li>
-                  <Link href="/collaboration#team" className="hover:text-[#86b847] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
+                  <Link href="/collaboration#team" className="hover:text-[#4d7526] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
                     Leadership Team
                   </Link>
                 </li>
                 <li>
-                  <Link href="/news" className="hover:text-[#86b847] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
+                  <Link href="/news" className="hover:text-[#4d7526] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
                     News &amp; Updates
                   </Link>
                 </li>
@@ -98,27 +98,27 @@ export function Footer() {
 
             {/* Sub-col 2: Social / Inquiries */}
             <div className="space-y-4">
-              <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-[#86b847] underline underline-offset-8 decoration-2 decoration-[#86b847]">
+              <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-[#4d7526] underline underline-offset-8 decoration-2 decoration-[#86b847]">
                 ENGAGEMENT
               </h4>
               <ul className="space-y-2.5 text-xs font-bold uppercase tracking-wider text-[#1e2622]/80 pt-2">
                 <li>
-                  <Link href="/collaboration#students" className="hover:text-[#86b847] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
+                  <Link href="/collaboration#students" className="hover:text-[#4d7526] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
                     Student Mentorship
                   </Link>
                 </li>
                 <li>
-                  <Link href="/collaboration#inquiry" className="hover:text-[#86b847] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
+                  <Link href="/collaboration#inquiry" className="hover:text-[#4d7526] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
                     Collaboration Portal
                   </Link>
                 </li>
                 <li>
-                  <Link href="/collaboration#careers" className="hover:text-[#86b847] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
+                  <Link href="/collaboration#careers" className="hover:text-[#4d7526] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
                     Careers &amp; Joining
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="hover:text-[#86b847] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
+                  <Link href="/contact" className="hover:text-[#4d7526] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
                     Official Inquiries
                   </Link>
                 </li>
@@ -127,27 +127,37 @@ export function Footer() {
 
             {/* Sub-col 3: Governance & Locations */}
             <div className="space-y-4">
-              <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-[#86b847] underline underline-offset-8 decoration-2 decoration-[#86b847]">
+              <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-[#4d7526] underline underline-offset-8 decoration-2 decoration-[#86b847]">
                 GOVERNANCE
               </h4>
               <ul className="space-y-2.5 text-xs font-bold uppercase tracking-wider text-[#1e2622]/80 pt-2">
                 <li>
-                  <Link href="/privacy" className="hover:text-[#86b847] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
+                  <Link href="/privacy" className="hover:text-[#4d7526] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="/terms" className="hover:text-[#86b847] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
+                  <Link href="/terms" className="hover:text-[#4d7526] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
                     Terms of Use
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about#integrity" className="hover:text-[#86b847] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
+                  <Link href="/about#integrity" className="hover:text-[#4d7526] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
                     Scientific Integrity
                   </Link>
                 </li>
                 <li>
-                  <span className="text-[10px] font-medium text-[#1e2622]/50 block leading-normal pt-1 lowercase">
+                  <Link href="/transparency" className="hover:text-[#4d7526] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
+                    Transparency Record
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/press" className="hover:text-[#4d7526] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
+                    Press &amp; Media Kit
+                  </Link>
+                </li>
+                <li>
+                  <span className="text-[10px] font-medium text-[#1e2622]/70 block leading-normal pt-1 lowercase">
                     wcag 2.2 aa accessible
                   </span>
                 </li>
@@ -157,7 +167,7 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-[#1e2622]/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[9px] font-bold uppercase tracking-[0.25em] text-[#1e2622]/40">
+        <div className="pt-8 border-t border-[#1e2622]/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[9px] font-bold uppercase tracking-[0.25em] text-[#1e2622]/70">
           <p>© {currentYear} ATMOSYN. ALL RIGHTS RESERVED.</p>
           <p className="text-center sm:text-right">
             CLIMATE ACTION · SUSTAINABILITY · RESEARCH

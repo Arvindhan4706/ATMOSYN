@@ -39,7 +39,7 @@ export function MetricsBand({ metrics }: { metrics: Metric[] }) {
   return (
     <section ref={ref} className="py-20 bg-[#f4f0e6] border-b border-[#1e2622]/10">
       <Container size="wide">
-        <div className="utility-label text-[#86b847] mb-10 text-center">
+        <div className="utility-label text-[#4d7526] mb-10 text-center">
           Atmosyn Today · Verified Numbers Only
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
@@ -48,7 +48,7 @@ export function MetricsBand({ metrics }: { metrics: Metric[] }) {
               <div className="text-5xl sm:text-6xl font-black italic tracking-tighter text-[#1e2622] font-mono leading-none">
                 {Math.round(metric.value * progress)}
               </div>
-              <div className="utility-label text-[#1e2622]/50 mt-3">{metric.label}</div>
+              <div className="utility-label text-[#1e2622]/70 mt-3">{metric.label}</div>
             </div>
           ))}
         </div>

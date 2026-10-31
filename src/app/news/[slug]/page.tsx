@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { newsPosts } from "@/data/news";
-import { JsonLd, nestedBreadcrumbSchema } from "@/components/seo/JsonLd";
+import { JsonLd, nestedBreadcrumbSchema, articleSchema } from "@/components/seo/JsonLd";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: { canonical: `/news/${post.slug}` },
     openGraph: {
       type: "article",
       publishedTime: post.date,
@@ -57,18 +58,19 @@ export default async function NewsPostPage({ params }: PageProps) {
           `/news/${post.slug}`
         )}
       />
+      <JsonLd data={articleSchema(post)} />
       <article>
         <Container size="narrow">
           <Link
             href="/news"
-            className="text-[10px] font-black uppercase tracking-[0.2em] text-[#86b847] hover:text-[#1e2622] transition-colors mb-8 inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] rounded"
+            className="text-[10px] font-black uppercase tracking-[0.2em] text-[#4d7526] hover:text-[#1e2622] transition-colors mb-8 inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] rounded"
           >
             &larr; All News
           </Link>
 
           <div className="flex flex-wrap items-center gap-4 mb-6">
-            <span className="utility-label text-[#86b847]">{post.category}</span>
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#1e2622]/40">
+            <span className="utility-label text-[#4d7526]">{post.category}</span>
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#1e2622]/70">
               {formatDate(post.date)}
             </span>
           </div>
@@ -101,7 +103,7 @@ export default async function NewsPostPage({ params }: PageProps) {
             </Link>
             <Link
               href="/collaboration#inquiry"
-              className="px-8 py-3.5 rounded-full bg-[#86b847] hover:bg-[#75a33b] text-[#1e2622] font-extrabold text-[10px] tracking-[0.2em] uppercase transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7]"
+              className="px-8 py-3.5 rounded-full bg-[#86b847] hover:bg-[#75a33b] text-[#1e2622] font-extrabold text-[10px] tracking-[0.2em] uppercase transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7]"
             >
               Collaborate With Us
             </Link>

@@ -20,14 +20,14 @@ export function HeroSection() {
                 priority
                 className="w-14 h-14 rounded-2xl border border-[#1e2622]/10 shadow-sm"
               />
-              <span className="utility-label text-[#1e2622]/60">
+              <span className="utility-label text-[#1e2622]/70">
                 Environmental Architecture · 2026
               </span>
             </div>
 
             <h1 className="text-[13vw] lg:text-[12vw] font-black tracking-tighter leading-[0.82] uppercase text-ink-gradient">
               CLIMATE<br />
-              <span className="font-accent lowercase text-[#86b847] text-[1.02em] pr-2">practical</span><br />
+              <span className="font-accent lowercase text-[#6f9c39] text-[1.02em] pr-2">practical</span><br />
               FUTURE.
             </h1>
 
@@ -45,7 +45,7 @@ export function HeroSection() {
                 className="inline-flex items-center gap-3 text-sm font-extrabold tracking-[0.2em] uppercase text-[#1e2622] border-b-2 border-[#86b847] pb-2 hover:text-[#1e2622]/70 transition-colors"
               >
                 <span>Explore Our Work</span>
-                <ArrowRight className="w-4 h-4 text-[#86b847]" />
+                <ArrowRight className="w-4 h-4 text-[#4d7526]" />
               </Link>
             </div>
           </div>
@@ -54,7 +54,7 @@ export function HeroSection() {
           <div className="lg:col-span-5 relative">
             <div className="editorial-img-container rounded-[24px] aspect-[4/5] w-full shadow-2xl relative overflow-hidden bg-[#f4f0e6]">
               <Image
-                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80"
+                src="/images/photo-1542601906990-b4d3fb778b09.jpg"
                 alt="Atmospheric forest ecosystem canopy"
                 fill
                 priority

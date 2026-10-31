@@ -6,6 +6,7 @@ import { researchThemes } from "@/data/researchThemes";
 import { JsonLd, breadcrumbSchema } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/research" },
   title: "Research & Innovation — Climate Framework",
   description:
     "Explore Atmosyn's research agenda, technological frameworks, and open scientific inquiry protocols for climate solutions.",
@@ -75,11 +76,11 @@ export default function ResearchPage() {
       <section className="pb-16 border-b border-[#1e2622]/10 mb-16">
         <Container size="wide">
           <div className="max-w-4xl space-y-4">
-            <div className="utility-label text-[#86b847]">
+            <div className="utility-label text-[#4d7526]">
               Pillar 3 · Research & Innovation
             </div>
             <h1 className="text-6xl sm:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
-              OPEN <span className="font-accent lowercase text-[#86b847] text-[1.02em]">research.</span>
+              OPEN <span className="font-accent lowercase text-[#6f9c39] text-[1.02em]">research.</span>
             </h1>
             <p className="text-xl sm:text-2xl text-[#1e2622]/80 max-w-2xl font-normal leading-relaxed pt-2">
               We apply rigorous computational modeling, telemetry architectures, and open protocols to
@@ -93,7 +94,7 @@ export default function ResearchPage() {
       <section className="py-20 border-b border-[#1e2622]/10 bg-[#f4f0e6]">
         <Container size="wide">
           <div className="max-w-3xl mb-16">
-            <div className="utility-label text-[#86b847] mb-3">
+            <div className="utility-label text-[#4d7526] mb-3">
               Methodological Standards
             </div>
             <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
@@ -107,7 +108,7 @@ export default function ResearchPage() {
                 key={stage.level}
                 className="p-8 rounded-[16px] bg-[#fdfbf7] border border-[#1e2622]/10 space-y-3"
               >
-                <span className="text-3xl font-black italic tracking-tighter text-[#86b847] block font-mono">
+                <span className="text-3xl font-black italic tracking-tighter text-[#4d7526] block font-mono">
                   {stage.level}
                 </span>
                 <h3 className="text-sm font-black uppercase tracking-wider text-[#1e2622] leading-snug">
@@ -126,7 +127,7 @@ export default function ResearchPage() {
       <section className="py-28 border-b border-[#1e2622]/10">
         <Container size="wide">
           <div className="max-w-3xl mb-16">
-            <div className="utility-label text-[#86b847] mb-3">
+            <div className="utility-label text-[#4d7526] mb-3">
               Active Focus
             </div>
             <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
@@ -142,14 +143,14 @@ export default function ResearchPage() {
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#1e2622]/10">
                   <div>
-                    <span className="utility-label text-[#86b847]">
+                    <span className="utility-label text-[#4d7526]">
                       {theme.category}
                     </span>
                     <h3 className="text-3xl font-black uppercase tracking-tight text-[#1e2622] mt-1">
                       {theme.title}
                     </h3>
                   </div>
-                  <span className="text-xs font-black uppercase tracking-wider text-[#1e2622]/40">
+                  <span className="text-xs font-black uppercase tracking-wider text-[#1e2622]/70">
                     Status: {theme.status}
                   </span>
                 </div>
@@ -171,7 +172,7 @@ export default function ResearchPage() {
                     <ul className="space-y-2 text-sm text-[#1e2622]/80 font-medium">
                       {theme.keyQuestions.map((q, idx) => (
                         <li key={idx} className="flex items-start gap-2.5">
-                          <span className="text-[#86b847] font-black">―</span>
+                          <span className="text-[#4d7526] font-black">―</span>
                           <span className="leading-relaxed">{q}</span>
                         </li>
                       ))}
@@ -179,11 +180,11 @@ export default function ResearchPage() {
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-[#1e2622]/10 flex items-center justify-between text-xs text-[#1e2622]/50">
+                <div className="pt-4 border-t border-[#1e2622]/10 flex items-center justify-between text-xs text-[#1e2622]/70">
                   <span>{theme.scientificIntegrityNote}</span>
                   <Link
                     href="/collaboration#inquiry"
-                    className="text-[10px] font-black uppercase tracking-[0.2em] text-[#86b847] hover:text-[#1e2622] border-b border-[#86b847] pb-0.5 transition-colors"
+                    className="text-[10px] font-black uppercase tracking-[0.2em] text-[#4d7526] hover:text-[#1e2622] border-b border-[#86b847] pb-0.5 transition-colors"
                   >
                     Inquire to contribute &rarr;
                   </Link>
@@ -198,7 +199,7 @@ export default function ResearchPage() {
       <section className="py-28 border-b border-[#1e2622]/10 bg-[#f4f0e6]">
         <Container size="wide">
           <div className="max-w-3xl mb-16">
-            <div className="utility-label text-[#86b847] mb-3">
+            <div className="utility-label text-[#4d7526] mb-3">
               Curated Resources
             </div>
             <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
@@ -209,7 +210,7 @@ export default function ResearchPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {externalResources.map((category) => (
               <div key={category.title} className="space-y-6">
-                <h3 className="text-xs font-black uppercase tracking-widest text-[#86b847] border-b border-[#1e2622]/10 pb-3">
+                <h3 className="text-xs font-black uppercase tracking-widest text-[#4d7526] border-b border-[#1e2622]/10 pb-3">
                   {category.title}
                 </h3>
                 <ul className="space-y-4">
@@ -219,7 +220,7 @@ export default function ResearchPage() {
                         href={item.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-bold text-[#1e2622] hover:text-[#86b847] transition-colors"
+                        className="font-bold text-[#1e2622] hover:text-[#4d7526] transition-colors"
                         aria-label={`Visit ${item.name}`}
                       >
                         {item.name} &rarr;
@@ -239,18 +240,38 @@ export default function ResearchPage() {
       {/* Publications / Data Notice */}
       <section className="py-24 bg-[#f4f0e6]">
         <Container size="wide">
-          <div className="max-w-3xl space-y-4">
-            <h2 className="text-3xl font-black uppercase tracking-tight text-[#1e2622]">
-              Publications & Repositories
-            </h2>
-            <p className="text-base text-[#1e2622]/80 leading-relaxed font-normal">
-              Atmosyn has not yet released formal peer-reviewed publications or datasets. As experimental
-              protocols yield verified, reproducible results, open-access technical reports and git
-              repositories will be published here.
-            </p>
-            <p className="text-xs text-[#1e2622]/50">
-              We adhere strictly to our policy against premature publication or unverified claims.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-7 space-y-4">
+              <h2 className="text-3xl font-black uppercase tracking-tight text-[#1e2622]">
+                Publications & Repositories
+              </h2>
+              <p className="text-base text-[#1e2622]/80 leading-relaxed font-normal">
+                Atmosyn has not yet released formal peer-reviewed publications or datasets. As experimental
+                protocols yield verified, reproducible results, open-access technical reports and git
+                repositories will be published openly.
+              </p>
+              <p className="text-xs text-[#1e2622]/70">
+                We adhere strictly to our policy against premature publication or unverified claims.
+              </p>
+            </div>
+            <div className="lg:col-span-5 p-8 rounded-[16px] bg-[#fdfbf7] border border-[#1e2622]/10 space-y-4">
+              <span className="utility-label text-[#4d7526]">Open Source Architecture</span>
+              <h3 className="text-xl font-black uppercase tracking-tight text-[#1e2622]">
+                GitHub Organization
+              </h3>
+              <p className="text-xs text-[#1e2622]/80 leading-relaxed">
+                Source code, telemetry schemas, and hardware firmware blueprints are shared openly on our official GitHub organization as they pass internal validation.
+              </p>
+              <a
+                href="https://github.com/atmosyn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#4d7526] hover:text-[#1e2622] transition-colors pt-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d7526] rounded"
+              >
+                <span>Visit github.com/atmosyn</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
           </div>
         </Container>
       </section>

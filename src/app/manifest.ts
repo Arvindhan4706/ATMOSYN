@@ -1,11 +1,11 @@
 import type { MetadataRoute } from "next";
+import { siteConfig } from "@/data/siteConfig";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "ATMOSYN — Nature × Technology × Innovation",
     short_name: "ATMOSYN",
-    description:
-      "Atmosyn brings people, research, and emerging technologies together to explore practical solutions for environmental and climate challenges.",
+    description: siteConfig.description,
     start_url: "/",
     display: "standalone",
     background_color: "#fdfbf7",
@@ -21,6 +21,14 @@ export default function manifest(): MetadataRoute.Manifest {
         sizes: "any",
         type: "image/png",
         purpose: "any",
+      },
+      {
+        // Logo pre-padded into the 80% maskable safe zone so Android does
+        // not clip it behind circular/squircle launch masks.
+        src: "/icon-maskable-512.png",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "maskable",
       },
     ],
   };

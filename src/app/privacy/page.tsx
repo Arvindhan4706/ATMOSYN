@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/privacy" },
   title: "Privacy Policy & Data Ethics",
   description:
     "How Atmosyn collects, uses, and protects information submitted through this website, and what we do not track.",
@@ -17,7 +18,7 @@ export default function PrivacyPage() {
       <section className="pb-16 border-b border-[#1e2622]/10 mb-16">
         <Container size="narrow">
           <div className="space-y-4">
-            <div className="utility-label text-[#86b847]">
+            <div className="utility-label text-[#4d7526]">
               Governance & Compliance
             </div>
             <h1 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
@@ -27,7 +28,7 @@ export default function PrivacyPage() {
               Atmosyn is committed to privacy, transparency, and data minimization. We collect only what
               is necessary to evaluate collaboration inquiries, and we do not track visitors.
             </p>
-            <p className="text-xs text-[#1e2622]/50">
+            <p className="text-xs text-[#1e2622]/70">
               Last updated: {lastUpdated} · Version 1.1
             </p>
           </div>
@@ -38,7 +39,7 @@ export default function PrivacyPage() {
         <Container size="narrow">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-6 rounded-[16px] bg-[#fdfbf7] border border-[#1e2622]/10 space-y-2">
-              <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#86b847]">
+              <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#4d7526]">
                 No Tracking
               </h3>
               <p className="text-sm text-[#1e2622]/80">
@@ -46,7 +47,7 @@ export default function PrivacyPage() {
               </p>
             </div>
             <div className="p-6 rounded-[16px] bg-[#fdfbf7] border border-[#1e2622]/10 space-y-2">
-              <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#86b847]">
+              <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#4d7526]">
                 Data Minimization
               </h3>
               <p className="text-sm text-[#1e2622]/80">
@@ -54,7 +55,7 @@ export default function PrivacyPage() {
               </p>
             </div>
             <div className="p-6 rounded-[16px] bg-[#fdfbf7] border border-[#1e2622]/10 space-y-2">
-              <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#86b847]">
+              <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#4d7526]">
                 Your Rights
               </h3>
               <p className="text-sm text-[#1e2622]/80">
@@ -249,7 +250,7 @@ export default function PrivacyPage() {
                   Official email channels are currently being provisioned (see the{" "}
                   <Link
                     href="/contact"
-                    className="text-[#86b847] font-bold underline underline-offset-4"
+                    className="text-[#4d7526] font-bold underline underline-offset-4"
                   >
                     Contact page
                   </Link>{" "}

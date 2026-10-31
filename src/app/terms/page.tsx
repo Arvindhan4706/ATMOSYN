@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { JsonLd, breadcrumbSchema } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/terms" },
   title: "Terms of Use",
   description:
     "Terms governing the use of the Atmosyn website, including content, submissions, and external links.",
@@ -19,7 +20,7 @@ export default function TermsPage() {
       <section className="pb-16 border-b border-[#1e2622]/10 mb-16">
         <Container size="narrow">
           <div className="space-y-4">
-            <div className="utility-label text-[#86b847]">Governance & Compliance</div>
+            <div className="utility-label text-[#4d7526]">Governance & Compliance</div>
             <h1 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
               TERMS.
             </h1>
@@ -27,7 +28,7 @@ export default function TermsPage() {
               These terms govern your use of atmosyn.org and its content. By using
               the site you accept them.
             </p>
-            <p className="text-xs text-[#1e2622]/50">Last updated: {lastUpdated} · Version 1.0</p>
+            <p className="text-xs text-[#1e2622]/70">Last updated: {lastUpdated} · Version 1.0</p>
           </div>
         </Container>
       </section>
@@ -82,7 +83,7 @@ export default function TermsPage() {
                 as described in our{" "}
                 <Link
                   href="/privacy"
-                  className="text-[#86b847] font-bold underline underline-offset-4"
+                  className="text-[#4d7526] font-bold underline underline-offset-4"
                 >
                   Privacy Policy
                 </Link>
@@ -134,7 +135,7 @@ export default function TermsPage() {
                 Questions about these terms can be raised through the{" "}
                 <Link
                   href="/collaboration#inquiry"
-                  className="text-[#86b847] font-bold underline underline-offset-4"
+                  className="text-[#4d7526] font-bold underline underline-offset-4"
                 >
                   collaboration inquiry portal
                 </Link>{" "}
