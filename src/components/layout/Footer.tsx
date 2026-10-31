@@ -15,21 +15,38 @@ export function Footer() {
           <div className="lg:col-span-5 space-y-6">
             <Link
               href="/"
-              className="flex items-center gap-4 hover:opacity-80 transition-opacity inline-flex focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded"
+              className="flex items-center gap-4 group inline-flex focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded"
             >
               <Image
                 src="/logo-mark.png"
                 alt=""
                 width={72}
                 height={72}
-                className="w-16 h-16 rounded-2xl border border-[#1e2622]/10 shadow-sm"
+                className="w-16 h-16 rounded-2xl border border-[#1e2622]/10 shadow-sm group-hover:border-[#86b847]/50 group-hover:shadow-[0_2px_12px_rgba(134,184,71,0.25)] transition-all duration-500"
               />
-              {/* Matching wordmark: lowercase semibold + signature green lozenge */}
-              <span className="flex items-baseline text-[30px] font-semibold lowercase tracking-[-0.015em] text-[#1e2622] leading-none">
-                atmosyn
+              {/* Matching cinematic wordmark: same atmo/syn split and lozenge */}
+              <span className="flex items-baseline text-[30px] font-semibold tracking-[-0.015em] text-[#1e2622] leading-none">
+                <span aria-hidden="true" className="flex items-baseline">
+                  {["a", "t", "m", "o"].map((letter, i) => (
+                    <span
+                      key={letter}
+                      className="wm-rise inline-block"
+                      style={{ animationDelay: `${i * 55}ms` }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                  <span
+                    className="wm-rise inline-block"
+                    style={{ animationDelay: "235ms" }}
+                  >
+                    <span className="font-accent text-[1.12em] wm-shine">syn</span>
+                  </span>
+                </span>
                 <span
                   aria-hidden="true"
-                  className="inline-block w-[7px] h-[7px] ml-[7px] mb-[2px] shrink-0 bg-[#86b847] rotate-45"
+                  className="wm-mark ml-[7px] mb-[3px] h-[7px] w-[7px] shrink-0 bg-[#86b847] rotate-45 transition-transform duration-500 group-hover:rotate-[225deg]"
+                  style={{ animationDelay: "520ms" }}
                 />
               </span>
             </Link>

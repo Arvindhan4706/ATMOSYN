@@ -65,6 +65,88 @@
   color: transparent;
 }
 
+/* ── Cinematic wordmark ──────────────────────────────────────────────
+   "atmo" rises letter-by-letter on load; the serif "syn" half carries a
+   travelling green shine (once on load, again on every hover) with a
+   soft accent glow; the closing lozenge pops in as the final beat.
+   Pure CSS — server and client render identical markup, so there is no
+   hydration risk. */
+.wm-rise {
+  animation: wm-rise 0.7s var(--motion-weighted) both;
+}
+
+@keyframes wm-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.55em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wm-shine {
+  background-image: linear-gradient(
+    100deg,
+    #79a83e 0%,
+    #86b847 34%,
+    #eefcd9 50%,
+    #86b847 66%,
+    #79a83e 100%
+  );
+  background-size: 300% 100%;
+  background-position: 0% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 10px rgba(134, 184, 71, 0.3));
+  animation: wm-glint 1.5s ease-out 0.7s 1 both;
+  transition: filter 0.5s ease;
+}
+
+/* Highlight sits off-canvas at 100%/0% and crosses the letters between,
+   sweeping left to right. */
+@keyframes wm-glint {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0% 0;
+  }
+}
+
+/* Hover: a second, faster glint. A distinct keyframe name makes the
+   browser restart it cleanly instead of keeping the completed state. */
+.group:hover .wm-shine {
+  animation: wm-glint-hot 1s ease-in-out 0s 1 both;
+  filter: drop-shadow(0 0 16px rgba(134, 184, 71, 0.55));
+}
+
+@keyframes wm-glint-hot {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0% 0;
+  }
+}
+
+.wm-mark {
+  animation: wm-pop 0.55s var(--motion-weighted) both;
+}
+
+@keyframes wm-pop {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 /* Weighted Motion Curve (shared by reveal + editorial image effects) */
 :root {
   --motion-weighted: cubic-bezier(0.16, 1, 0.3, 1);
@@ -138,6 +220,7 @@
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+    animation-delay: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;

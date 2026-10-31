@@ -88,7 +88,7 @@ export function Navbar() {
             {/* Left: logo mark + ATMOSYN wordmark */}
             <Link
               href="/"
-              className="flex items-center gap-3 group hover:opacity-80 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] rounded"
+              className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] rounded"
               aria-label="Atmosyn Homepage"
             >
               <Image
@@ -99,13 +99,32 @@ export function Navbar() {
                 priority
                 className="w-9 h-9 sm:w-11 sm:h-11 rounded-2xl border border-[#1e2622]/10 shadow-sm group-hover:border-[#86b847]/50 group-hover:shadow-[0_2px_10px_rgba(134,184,71,0.25)] transition-all duration-500"
               />
-              {/* Wordmark: lowercase semibold with the site's signature green
-                  lozenge as the closing mark (same detail as utility labels). */}
-              <span className="flex items-baseline text-[25px] sm:text-[29px] font-semibold lowercase tracking-[-0.015em] text-[#1e2622] leading-none">
-                atmosyn
+              {/* Cinematic wordmark: "atmo" rises letter-by-letter on load,
+                  the serif "syn" half carries a travelling shine + glow
+                  (and re-glows on hover), the lozenge pops in last.
+                  aria-label on the Link provides the accessible name. */}
+              <span className="flex items-baseline text-[26px] sm:text-[30px] font-semibold tracking-[-0.015em] text-[#1e2622] leading-none">
+                <span aria-hidden="true" className="flex items-baseline">
+                  {["a", "t", "m", "o"].map((letter, i) => (
+                    <span
+                      key={letter}
+                      className="wm-rise inline-block"
+                      style={{ animationDelay: `${i * 55}ms` }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                  <span
+                    className="wm-rise inline-block"
+                    style={{ animationDelay: "235ms" }}
+                  >
+                    <span className="font-accent text-[1.12em] wm-shine">syn</span>
+                  </span>
+                </span>
                 <span
                   aria-hidden="true"
-                  className="inline-block w-[6px] h-[6px] ml-[6px] mb-[2px] shrink-0 bg-[#86b847] rotate-45 transition-transform duration-500 group-hover:rotate-[225deg]"
+                  className="wm-mark ml-[7px] mb-[2px] h-[6px] w-[6px] shrink-0 bg-[#86b847] rotate-45 transition-transform duration-500 group-hover:rotate-[225deg]"
+                  style={{ animationDelay: "520ms" }}
                 />
               </span>
             </Link>
