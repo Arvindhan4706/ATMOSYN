@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { researchThemes } from "@/data/researchThemes";
+import { JsonLd, breadcrumbSchema } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "Research & Innovation — Climate Framework",
@@ -69,6 +70,7 @@ export default function ResearchPage() {
 
   return (
     <div className="pt-36 pb-32 bg-[#fdfbf7]">
+      <JsonLd data={breadcrumbSchema("Research & Innovation", "/research")} />
       {/* Header */}
       <section className="pb-16 border-b border-[#1e2622]/10 mb-16">
         <Container size="wide">

@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { siteConfig } from "@/data/siteConfig";
 import { projects } from "@/data/projects";
+import { newsPosts } from "@/data/news";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Static content-update date instead of build time, so crawlers see a
@@ -14,8 +15,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/work",
     "/research",
     "/collaboration",
+    "/news",
     "/contact",
     "/privacy",
+    "/terms",
   ].map((route) => ({
     url: `${siteConfig.url}${route}`,
     lastModified,
@@ -30,5 +33,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...routes, ...projectRoutes];
+  const newsRoutes = newsPosts.map((p) => ({
+    url: `${siteConfig.url}/news/${p.slug}`,
+    lastModified: new Date(p.date).toISOString(),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [...routes, ...projectRoutes, ...newsRoutes];
 }

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { siteConfig } from "@/data/siteConfig";
+import { JsonLd, breadcrumbSchema } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "Contact — Communications & Inquiries",
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="pt-36 pb-32 bg-[#fdfbf7]">
+      <JsonLd data={breadcrumbSchema("Contact", "/contact")} />
       <section className="pb-16 border-b border-[#1e2622]/10 mb-16">
         <Container size="wide">
           <div className="max-w-4xl space-y-4">

@@ -96,7 +96,12 @@ export function Navbar() {
             {/* Center Menu: 12px uppercase tracking-widest (0.2em) */}
             <nav id="main-navigation" className="hidden lg:flex items-center space-x-8" aria-label="Main Navigation">
               {siteConfig.navLinks.map((link) => {
-                const isActive = pathname === link.href;
+                // Highlight the section for all nested routes too
+                // (e.g. /news/some-post keeps "News" active).
+                const isActive =
+                  link.href === "/"
+                    ? pathname === "/"
+                    : pathname.startsWith(link.href);
                 return (
                   <Link
                     key={link.href}
@@ -151,7 +156,10 @@ export function Navbar() {
           >
             <nav className="flex flex-col space-y-3" aria-label="Mobile Navigation">
               {siteConfig.navLinks.map((link) => {
-                const isActive = pathname === link.href;
+                const isActive =
+                  link.href === "/"
+                    ? pathname === "/"
+                    : pathname.startsWith(link.href);
                 return (
                   <Link
                     key={link.href}

@@ -1,8 +1,24 @@
 import React from "react";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { CollaborationForm } from "@/components/collaboration/CollaborationForm";
 import { teamMembers } from "@/data/team";
+import { faqs } from "@/data/faq";
+import { JsonLd, breadcrumbSchema } from "@/components/seo/JsonLd";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
 
 export const metadata: Metadata = {
   title: "People & Collaboration — Leadership & Student Mentorship",
@@ -17,6 +33,8 @@ export default function CollaborationPage() {
 
   return (
     <div className="pt-36 pb-32 bg-[#fdfbf7]">
+      <JsonLd data={breadcrumbSchema("People & Collaboration", "/collaboration")} />
+      <JsonLd data={faqSchema} />
       {/* Header */}
       <section className="pb-16 border-b border-[#1e2622]/10 mb-16">
         <Container size="wide">
@@ -151,8 +169,110 @@ export default function CollaborationPage() {
         </Container>
       </section>
 
+      {/* Careers / Join */}
+      <section id="careers" className="py-28 bg-[#f4f0e6] border-b border-[#1e2622]/10">
+        <Container size="wide">
+          <div className="max-w-3xl mb-16">
+            <div className="utility-label text-[#86b847] mb-3">
+              Careers &amp; General Applications
+            </div>
+            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
+              JOIN US.
+            </h2>
+            <p className="text-base text-[#1e2622]/80 pt-4 font-normal">
+              Atmosyn is in its early exploration phase, and we describe our hiring
+              situation the same way we describe everything else.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-8 rounded-[16px] bg-[#fdfbf7] border border-[#1e2622]/10 space-y-3">
+              <span className="utility-label text-[#86b847]">Students</span>
+              <h3 className="text-xl font-black uppercase tracking-tight text-[#1e2622]">
+                Mentorship Track
+              </h3>
+              <p className="text-sm text-[#1e2622]/80 leading-relaxed font-normal">
+                Our student climate mentorship protocol is in internal review. Pilot
+                cohort scheduling will be announced on this site and in our news feed
+                once confirmed — we will not list roles that do not exist yet.
+              </p>
+            </div>
+            <div className="p-8 rounded-[16px] bg-[#fdfbf7] border border-[#1e2622]/10 space-y-3">
+              <span className="utility-label text-[#86b847]">Early-Career</span>
+              <h3 className="text-xl font-black uppercase tracking-tight text-[#1e2622]">
+                General Applications
+              </h3>
+              <p className="text-sm text-[#1e2622]/80 leading-relaxed font-normal">
+                There are no open paid positions at this time. As projects and funding
+                solidify, open roles will be published here first, with real
+                requirements and honest compensation details. General applications are
+                always welcome.
+              </p>
+            </div>
+            <div className="p-8 rounded-[16px] bg-[#fdfbf7] border border-[#1e2622]/10 space-y-3">
+              <span className="utility-label text-[#86b847]">Experienced</span>
+              <h3 className="text-xl font-black uppercase tracking-tight text-[#1e2622]">
+                Practitioner Network
+              </h3>
+              <p className="text-sm text-[#1e2622]/80 leading-relaxed font-normal">
+                If you would like to contribute expertise as a reviewer, mentor, or
+                collaborator before formal roles exist, send a general inquiry. We are
+                building this network deliberately, not as a mailing list.
+              </p>
+            </div>
+          </div>
+
+          <div className="pt-10">
+            <Link
+              href="/collaboration#inquiry"
+              className="inline-block px-8 py-3.5 rounded-full bg-[#86b847] hover:bg-[#75a33b] text-[#1e2622] font-extrabold text-[10px] tracking-[0.2em] uppercase transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6]"
+            >
+              Send a General Application
+            </Link>
+          </div>
+        </Container>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="py-28 border-b border-[#1e2622]/10">
+        <Container size="narrow">
+          <div className="mb-16">
+            <div className="utility-label text-[#86b847] mb-3">
+              Common Questions
+            </div>
+            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
+              FAQ.
+            </h2>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((item) => (
+              <details
+                key={item.question}
+                className="group p-6 rounded-[16px] bg-[#f4f0e6] border border-[#1e2622]/10 open:border-[#86b847] transition-colors"
+              >
+                <summary className="flex items-start justify-between gap-6 cursor-pointer list-none marker:content-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fdfbf7] rounded">
+                  <h3 className="text-base sm:text-lg font-black uppercase tracking-tight text-[#1e2622]">
+                    {item.question}
+                  </h3>
+                  <span
+                    aria-hidden="true"
+                    className="shrink-0 text-[#86b847] font-black text-xl leading-none transition-transform duration-200 group-open:rotate-45"
+                  >
+                    +
+                  </span>
+                </summary>
+                <p className="text-sm text-[#1e2622]/80 leading-relaxed font-normal pt-4 mt-4 border-t border-[#1e2622]/10">
+                  {item.answer}
+                </p>
+              </details>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       {/* Collaboration Form Section */}
-      <section className="py-28 bg-[#f4f0e6]">
+      <section id="inquiry" className="py-28 bg-[#f4f0e6]">
         <Container size="narrow">
           <CollaborationForm />
         </Container>

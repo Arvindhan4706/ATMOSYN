@@ -55,6 +55,11 @@ export function Footer() {
                     Leadership Team
                   </Link>
                 </li>
+                <li>
+                  <Link href="/news" className="hover:text-[#86b847] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
+                    News &amp; Updates
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -75,6 +80,11 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/collaboration#careers" className="hover:text-[#86b847] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
+                    Careers &amp; Joining
+                  </Link>
+                </li>
+                <li>
                   <Link href="/contact" className="hover:text-[#86b847] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
                     Official Inquiries
                   </Link>
@@ -91,6 +101,11 @@ export function Footer() {
                 <li>
                   <Link href="/privacy" className="hover:text-[#86b847] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
                     Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/terms" className="hover:text-[#86b847] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#86b847] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f0e6] rounded">
+                    Terms of Use
                   </Link>
                 </li>
                 <li>
