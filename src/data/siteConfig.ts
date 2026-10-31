@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "ATMOSYN",
   tagline: "Nature × Technology × Innovation",
   description:
-    "Atmosyn brings people, research, and emerging technologies together to explore practical solutions for environmental and climate challenges.",
+    "Early-stage climate research collective bringing students and experienced leads together on open environmental questions — with every claim published honestly.",
   url: "https://atmosyn.org",
   /** Bump when site content substantively changes; used for sitemap lastModified. */
   lastContentUpdate: "2026-10-31",

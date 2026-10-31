@@ -31,7 +31,7 @@ export function InitiativesSection() {
             href="/work"
             className="text-[10px] font-black uppercase tracking-[0.2em] text-[#1e2622] border-b-2 border-[#86b847] pb-1 hover:text-[#1e2622]/60 transition-colors"
           >
-            All Case Studies &rarr;
+            All Explorations &rarr;
           </Link>
         </div>
 
@@ -57,10 +57,10 @@ export function InitiativesSection() {
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
 
-                    {/* On hover: centered 96px black circle with white 'View Case' */}
+                    {/* On hover: centered 96px black circle with white 'View Project' */}
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                       <div className="w-[96px] h-[96px] rounded-full bg-[#1e2622] text-white flex items-center justify-center font-bold text-[10px] tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-2xl">
-                        View Case
+                        View Project
                       </div>
                     </div>
                   </div>
@@ -82,7 +82,7 @@ export function InitiativesSection() {
                       <span>·</span>
                       <span>Exploratory Research</span>
                       <span>·</span>
-                      <span>Scope Verified</span>
+                      <span>Scope Documented</span>
                     </div>
                   </div>
                 </Link>

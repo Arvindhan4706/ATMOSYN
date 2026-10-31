@@ -22,7 +22,7 @@ export const faqs: FaqItem[] = [
   {
     question: "How long does a response take?",
     answer:
-      "Collaboration form inquiries are typically reviewed within 5-10 business days, and student inquiries within 7-14 business days. Complex proposals may take longer because our functional leads review each one personally.",
+      "There is no ticketing system behind the form yet — a functional lead reads each inquiry personally, so response time depends on review load rather than a published SLA. We would rather leave this unanswered than quote a turnaround we cannot guarantee.",
   },
   {
     question: "Where do I find your published research?",

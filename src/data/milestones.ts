@@ -1,5 +1,5 @@
 export interface Milestone {
-  /** Period label — keep honest; use "Year" or "Month Year" precision only for events you can date. */
+  /** Period label — only events with a documented basis belong here. */
   period: string;
   title: string;
   description: string;
@@ -7,32 +7,29 @@ export interface Milestone {
 
 /**
  * Chronological record of verifiable organization events.
- * Only events with a documented basis belong here. When a milestone truly
- * happens (first cohort, first prototype, registration), add it with its date.
+ *
+ * Dates are grounded in the organization charter document itself
+ * (docs/Atmosyn.docx): authored 18 January 2026, last revised
+ * 17 October 2026, by Jesi Anumitha Solomon (Founder & CEO).
+ * Add entries only when something real happens.
  */
 export const milestones: Milestone[] = [
   {
-    period: "2026",
+    period: "January 2026",
     title: "Organization charter documented",
     description:
-      "Eleven-member leadership structure and the three-pillar objective framework formally documented.",
+      "Founding charter authored on 18 January 2026, defining the eleven-member leadership structure and the three-pillar objective framework.",
   },
   {
-    period: "2026",
-    title: "Research framework published",
+    period: "October 2026",
+    title: "Charter revised through final review",
     description:
-      "Five-stage research lifecycle defined, with three themes opened at hypothesis and literature-review stages.",
-  },
-  {
-    period: "2026",
-    title: "Initiative scopes defined",
-    description:
-      "Three exploratory initiatives written up with problem statements, proposed approaches, and honest status labels.",
+      "Leadership roles and pillar objectives finalized in the charter's last revision on 17 October 2026.",
   },
   {
     period: "October 2026",
     title: "Public website & inquiry portal",
     description:
-      "Atmosyn.org goes live with a collaboration portal for students, researchers, and institutional partners.",
+      "Atmosyn.org goes live with the research framework, three documented initiative scopes, and a collaboration portal for students and partners.",
   },
 ];

@@ -54,7 +54,7 @@ export default function AboutPage() {
               About the Organization
             </div>
             <h1 className="text-6xl sm:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
-              ATMOSYN.
+              ABOUT <span className="font-accent lowercase text-[#86b847] text-[1.02em]">atmosyn.</span>
             </h1>
             <p className="text-xl sm:text-2xl text-[#1e2622]/80 max-w-2xl font-normal leading-relaxed pt-2">
               Atmosyn brings people, research, and emerging technologies together to explore

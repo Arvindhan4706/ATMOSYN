@@ -8,7 +8,7 @@ import { Search, Home, FileText, Users, FlaskConical } from "lucide-react";
 const popularLinks = [
   { href: "/", label: "Home", icon: Home, description: "Atmosyn overview & mission" },
   { href: "/about", label: "About Atmosyn", icon: FileText, description: "Mission, pillars & values" },
-  { href: "/work", label: "Our Work", icon: FlaskConical, description: "Verified case studies & explorations" },
+  { href: "/work", label: "Our Work", icon: FlaskConical, description: "Documented explorations & research design" },
   { href: "/research", label: "Research & Tech", icon: FlaskConical, description: "Active themes & publications" },
   { href: "/collaboration", label: "People & Collaboration", icon: Users, description: "Leadership team & student opportunities" },
   { href: "/contact", label: "Contact", icon: FileText, description: "Direct channels & PGP key" },

@@ -33,8 +33,9 @@ export function HeroSection() {
 
             {/* Below headline: 2xl body text in #1e2622/80 for better contrast */}
             <p className="text-xl sm:text-2xl text-[#1e2622]/80 max-w-xl font-normal leading-relaxed pt-2">
-              Atmosyn brings people, research, and emerging technologies together to explore practical
-              solutions for environmental and climate challenges.
+              An early-stage climate research collective, built to bring students
+              and experienced leads together on open environmental questions —
+              with every claim published at its honest stage.
             </p>
 
             {/* Arrow-cta with a border-bottom-2px #86b847 */}
@@ -43,7 +44,7 @@ export function HeroSection() {
                 href="/work"
                 className="inline-flex items-center gap-3 text-sm font-extrabold tracking-[0.2em] uppercase text-[#1e2622] border-b-2 border-[#86b847] pb-2 hover:text-[#1e2622]/70 transition-colors"
               >
-                <span>Explore Verified Work</span>
+                <span>Explore Our Work</span>
                 <ArrowRight className="w-4 h-4 text-[#86b847]" />
               </Link>
             </div>

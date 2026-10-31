@@ -22,7 +22,7 @@ export default function ContactPage() {
               Official Inquiries
             </div>
             <h1 className="text-6xl sm:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
-              CONTACT.
+              CONTACT <span className="font-accent lowercase text-[#86b847] text-[1.02em]">us.</span>
             </h1>
             <p className="text-xl sm:text-2xl text-[#1e2622]/80 max-w-2xl font-normal leading-relaxed pt-2">
               We welcome academic proposals, student inquiries, and institutional discussions focused
@@ -83,24 +83,20 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      {/* Response Time Expectations */}
+      {/* Response Handling — no invented SLAs */}
       <section className="py-28 border-t border-[#1e2622]/10">
         <Container size="narrow">
           <div className="p-8 rounded-[20px] bg-[#f4f0e6] border border-[#1e2622]/10 text-center space-y-6">
-            <div className="utility-label text-[#86b847]">Response Standards</div>
-            <h3 className="text-2xl font-black uppercase tracking-tight text-[#1e2622]">
-              Expected Response Times
+            <div className="utility-label text-[#86b847]">Response Handling</div>
+            <h3 className="text-2xl font-black uppercase tracking-tight text-ink-gradient">
+              How Inquiries Are Handled
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-[#1e2622]/80">
-              <div className="p-4 bg-[#fdfbf7] rounded-[12px]">
-                <p className="font-bold text-[#86b847]">Collaboration Form</p>
-                <p>5-10 business days</p>
-              </div>
-              <div className="p-4 bg-[#fdfbf7] rounded-[12px]">
-                <p className="font-bold text-[#86b847]">Student Inquiries</p>
-                <p>7-14 business days</p>
-              </div>
-            </div>
+            <p className="text-sm text-[#1e2622]/80 max-w-xl mx-auto leading-relaxed font-normal">
+              Every submission goes directly to the functional leads. There is no
+              automated ticketing system behind the form yet, so we do not publish
+              a fixed response SLA — we would rather leave the timeline open than
+              promise one we cannot guarantee.
+            </p>
             <p className="text-xs text-[#1e2622]/50">
               All inquiries are reviewed by functional leads. Complex proposals may require additional review time.
             </p>

@@ -79,7 +79,7 @@ export default function ResearchPage() {
               Pillar 3 · Research & Innovation
             </div>
             <h1 className="text-6xl sm:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
-              RESEARCH.
+              OPEN <span className="font-accent lowercase text-[#86b847] text-[1.02em]">research.</span>
             </h1>
             <p className="text-xl sm:text-2xl text-[#1e2622]/80 max-w-2xl font-normal leading-relaxed pt-2">
               We apply rigorous computational modeling, telemetry architectures, and open protocols to

@@ -5,9 +5,9 @@ import { WorkFilterList } from "@/components/work/WorkFilterList";
 import { JsonLd, breadcrumbSchema } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Our Work — Editorial Case Studies & Explorations",
+  title: "Our Work — Explorations & Research Design",
   description:
-    "Explore Atmosyn's verified research frameworks, early-stage exploratory initiatives, and student collaborative projects.",
+    "Explore Atmosyn's documented research frameworks, early-stage exploratory initiatives, and student collaborative projects.",
 };
 
 export default function WorkPage() {
@@ -21,7 +21,7 @@ export default function WorkPage() {
               Portfolio Index
             </div>
             <h1 className="text-6xl sm:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-ink-gradient">
-              OUR WORK.
+              OUR <span className="font-accent lowercase text-[#86b847] text-[1.02em]">work.</span>
             </h1>
             <p className="text-xl sm:text-2xl text-[#1e2622]/80 max-w-2xl font-normal leading-relaxed pt-2">
               We document our early-stage research questions, hardware architectures, and mentorship

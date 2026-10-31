@@ -29,8 +29,9 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-base text-[#1e2622]/80 leading-relaxed max-w-md font-medium">
-              Atmosyn brings people, research, and emerging technologies together to explore practical
-              solutions for environmental and climate challenges.
+              An early-stage climate research collective bringing students and
+              experienced leads together on open environmental questions —
+              every claim published at its honest stage.
             </p>
             <div className="utility-label text-[#1e2622]/40 pt-2">
               Status: Early Exploration & Research Planning

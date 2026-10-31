@@ -40,7 +40,7 @@ export function WorkFilterList() {
           <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-[#1e2622]/40" />
           <input
             type="text"
-            placeholder="Search verified case studies & explorations..."
+            placeholder="Search explorations & research designs..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-11 pr-4 py-3 text-xs uppercase tracking-wider font-bold bg-[#f4f0e6] border border-[#1e2622]/10 rounded-full text-[#1e2622] placeholder-[#1e2622]/40 focus:outline-none focus:border-[#86b847]"
@@ -105,10 +105,10 @@ export function WorkFilterList() {
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
 
-                    {/* Centered 96px black circle with white 'View Case' */}
+                    {/* Centered 96px black circle with white 'View Project' */}
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                       <div className="w-[96px] h-[96px] rounded-full bg-[#1e2622] text-white flex items-center justify-center font-bold text-[10px] tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-2xl">
-                        View Case
+                        View Project
                       </div>
                     </div>
                   </div>
