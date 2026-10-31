@@ -3,6 +3,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { pillars } from "@/data/pillars";
+import { teamMembers } from "@/data/team";
+import { projects } from "@/data/projects";
+import { researchThemes } from "@/data/researchThemes";
+import { milestones } from "@/data/milestones";
+import { MetricsBand } from "@/components/about/MetricsBand";
+import { JsonLd, breadcrumbSchema } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "About Atmosyn — Climate Mission & Pillars",
@@ -30,8 +36,16 @@ export default function AboutPage() {
     },
   ];
 
+  const metrics = [
+    { value: teamMembers.length, label: "Functional Leads" },
+    { value: pillars.length, label: "Operating Pillars" },
+    { value: projects.length, label: "Exploratory Initiatives" },
+    { value: researchThemes.length, label: "Active Research Themes" },
+  ];
+
   return (
     <div className="pt-36 pb-32 bg-[#fdfbf7]">
+      <JsonLd data={breadcrumbSchema("About", "/about")} />
       {/* Hero Section */}
       <section className="pb-16 border-b border-[#1e2622]/10 mb-16">
         <Container size="wide">
@@ -49,6 +63,9 @@ export default function AboutPage() {
           </div>
         </Container>
       </section>
+
+      {/* Verified metrics */}
+      <MetricsBand metrics={metrics} />
 
       {/* Purpose & Mission */}
       <section className="py-20 border-b border-[#1e2622]/10 bg-[#f4f0e6]">
@@ -181,6 +198,44 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
+        </Container>
+      </section>
+
+      {/* Milestones */}
+      <section id="milestones" className="py-28 border-b border-[#1e2622]/10">
+        <Container size="wide">
+          <div className="max-w-3xl mb-16">
+            <div className="utility-label text-[#86b847] mb-3">
+              Progress Record
+            </div>
+            <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-[#1e2622]">
+              MILESTONES.
+            </h2>
+            <p className="text-base text-[#1e2622]/80 pt-4 font-normal">
+              Only events with a documented basis appear here. The list grows when
+              something real happens — not before.
+            </p>
+          </div>
+
+          <ol className="max-w-3xl border-l border-[#1e2622]/10 pl-8 space-y-10">
+            {milestones.map((milestone) => (
+              <li key={milestone.title} className="relative">
+                <span
+                  className="absolute -left-[41px] top-2 w-3 h-3 rounded-full bg-[#86b847] border-2 border-[#fdfbf7]"
+                  aria-hidden="true"
+                />
+                <div className="text-[10px] font-black uppercase tracking-[0.25em] text-[#86b847] font-mono">
+                  {milestone.period}
+                </div>
+                <h3 className="text-xl font-black uppercase tracking-tight text-[#1e2622] mt-1">
+                  {milestone.title}
+                </h3>
+                <p className="text-sm text-[#1e2622]/80 leading-relaxed font-normal mt-1">
+                  {milestone.description}
+                </p>
+              </li>
+            ))}
+          </ol>
         </Container>
       </section>
 
