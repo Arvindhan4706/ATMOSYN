@@ -25,7 +25,7 @@ export function HeroSection() {
               </span>
             </div>
 
-            <h1 className="text-[13vw] lg:text-[12vw] font-black tracking-tighter leading-[0.82] uppercase text-ink-gradient">
+            <h1 className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tighter leading-[0.85] uppercase text-ink-gradient">
               CLIMATE<br />
               <span className="font-accent lowercase text-atmosyn-name text-[1.02em] pr-2">practical</span><br />
               FUTURE.
