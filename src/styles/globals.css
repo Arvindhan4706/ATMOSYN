@@ -252,6 +252,80 @@
   animation: bounceSlow 4s ease-in-out infinite;
 }
 
+/* Beacon Pulse Dots */
+@keyframes beacon-glow-amber {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(226, 170, 56, 0.55);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.08);
+    box-shadow: 0 0 0 6px rgba(226, 170, 56, 0);
+  }
+}
+
+.beacon-dot-amber {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background-color: #e2aa38;
+  display: inline-block;
+  animation: beacon-glow-amber 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes beacon-glow-green {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(36, 87, 43, 0.55);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.08);
+    box-shadow: 0 0 0 6px rgba(36, 87, 43, 0);
+  }
+}
+
+.beacon-dot-green {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background-color: #24572b;
+  display: inline-block;
+  animation: beacon-glow-green 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Subtle corner registration tick marks for technical specimen framing */
+.corner-ticks {
+  position: relative;
+}
+
+.corner-ticks::before,
+.corner-ticks::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.corner-ticks::before {
+  top: -1px;
+  left: -1px;
+  border-top: 1.5px solid rgba(30, 38, 34, 0.35);
+  border-left: 1.5px solid rgba(30, 38, 34, 0.35);
+}
+
+.corner-ticks::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 1.5px solid rgba(30, 38, 34, 0.35);
+  border-right: 1.5px solid rgba(30, 38, 34, 0.35);
+}
+
 /* Reveal-up Scroll Animation.
    The hidden start-state only applies when JS is available (the layout adds
    `.js` to <html>), so no-JS visitors always see the content. */
